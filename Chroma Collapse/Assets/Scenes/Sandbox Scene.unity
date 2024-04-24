@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 30338687}
   - component: {fileID: 30338686}
   - component: {fileID: 30338685}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 2}
+  m_LocalScale: {x: 10, y: 1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -774,6 +774,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2118955182}
   - component: {fileID: 2118955183}
+  - component: {fileID: 2118955184}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -826,6 +827,29 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!114 &2118955184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118955181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6c3afc7402e8884cb849a61b6a79d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpKey: 32
+  moveSpeed: 7
+  orientation: {fileID: 1370100894}
+  height: 2
+  groundTarget:
+    serializedVersion: 2
+    m_Bits: 1024
+  groundDrag: 5
+  jumpForce: 12
+  jumpCooldown: 0.25
+  airMult: 0.4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
