@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class GLOBAL_color : MonoBehaviour
 {
-    public bool red;    // hex 0xFF0000
-    public bool green;  // hex 0x00FF00
-    public bool blue;   // hex 0x0000FF
+    public bool red;   
+    public bool green;  
+    public bool blue;  
     public static UnityEngine.Color current_color;
 
     // Start is called before the first frame update
