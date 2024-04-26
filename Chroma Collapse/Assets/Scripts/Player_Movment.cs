@@ -17,7 +17,7 @@ public class Player_Movment : MonoBehaviour
     //check for grounding for drag
     public float height;
     public LayerMask groundTarget;
-    bool grounded;
+    public bool grounded;
     public float groundDrag;
 
     //variables for player input
