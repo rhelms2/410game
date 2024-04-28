@@ -29,11 +29,11 @@ public class GLOBAL_color : MonoBehaviour
     void Update()
     {
         changed = false;
-        if (Input.GetKeyDown("1")) {
+        if (Input.GetKeyDown("2")) {
             red = !red;
             changed = true;
         }
-        else if (Input.GetKeyDown("2")) {
+        else if (Input.GetKeyDown("1")) {
             yellow = !yellow;
             changed = true;
         }
@@ -44,12 +44,6 @@ public class GLOBAL_color : MonoBehaviour
         if (changed){
             changeColor();
         }
-
-        /*
-        if (!(red || green || blue)) {
-            current_color = Color.grey;
-        }
-        */
 
         Debug.Log("current_color = " + current_color);
     }
