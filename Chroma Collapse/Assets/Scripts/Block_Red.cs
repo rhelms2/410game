@@ -22,7 +22,7 @@ public class Block_Red : GLOBAL_color
     void Update()
     {
         //col_num associates with global color script, an integer value that tells the system what color something is. 
-        if (col_num == 1 || col_num == 2 || col_num == 6){
+        if (color == 1 || color == 2 || color == 6){
             if (isOn == false){
                 isOn = true;
 
