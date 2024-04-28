@@ -41,8 +41,13 @@ public class Player_Movment : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
     }
+<<<<<<< HEAD
 
     private void OnCollisionStay(Collision collision){
+=======
+    private void OnCollisionStay(Collision collision)
+    {
+>>>>>>> ba9bbf324b12d6b974092becfcda14fa419f5ad3
         grounded = true;
     }
 
@@ -61,9 +66,16 @@ public class Player_Movment : MonoBehaviour
 
             //invoke function
             Jump();
+            
 
+<<<<<<< HEAD
             //uncomment this if you want to continuously jump with a cooldown, like holding nspace bar keeps jumping.
             //Invoke(nameof(JumpReset), jumpCooldown);
+=======
+            //uncomment this if you want to continuously jump with a cooldown; I.E. holding nspace bar keeps jumping.
+            //Invoke(nameof(JumpReset), jumpCooldown);
+
+>>>>>>> ba9bbf324b12d6b974092becfcda14fa419f5ad3
             grounded = false;
         }
     }
@@ -91,6 +103,8 @@ public class Player_Movment : MonoBehaviour
 
         //apply force for jump, using impulse because we want to do it only once.
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+
+        grounded = false;
     }
 
     //called after jump to reset jumpStatus
@@ -134,4 +148,6 @@ public class Player_Movment : MonoBehaviour
         //invoke function
         MovePlayer();
     }
+    //added from rollaball
+
 }
