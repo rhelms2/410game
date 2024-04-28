@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Block_Red : GLOBAL_color
+public class Block_Blue : GLOBAL_color
 {
 
     private bool isOn;
@@ -22,7 +22,7 @@ public class Block_Red : GLOBAL_color
     void Update()
     {
         //col_num associates with global color script, an integer value that tells the system what color something is. 
-        if (color == 1 || color == 2 || color == 6){
+        if (color == 4 || color == 5 || color == 6){
             if (isOn == false){
                 isOn = true;
 
