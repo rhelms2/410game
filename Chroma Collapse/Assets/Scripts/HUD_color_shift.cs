@@ -22,8 +22,8 @@ public class HUD_color_shift : GLOBAL_color
         if (curcol != current_color){
             foreach(Image i in armImg) i.enabled = false;
             foreach(Image j in gunImg) j.enabled = false;
-            armImg[col_num].enabled = true;
-            gunImg[col_num].enabled = true;
+            armImg[color].enabled = true;
+            gunImg[color].enabled = true;
             curcol = current_color;
         }
     }

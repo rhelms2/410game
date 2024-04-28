@@ -9,7 +9,17 @@ public class GLOBAL_color : MonoBehaviour
     public bool yellow;  
     public bool blue;  
     public static UnityEngine.Color current_color;
-    public static int col_num;
+    public enum color_enum {
+        grey,
+        red,
+        orange,
+        yellow,
+        green,
+        blue,
+        purple,
+        white
+    }
+    public static int color;
     bool changed;
     UnityEngine.Color purple = new Color(0.6f,0,0.9f,0);
     UnityEngine.Color orange = new Color(1.0f, 0.5f, 0, 0);
@@ -22,7 +32,7 @@ public class GLOBAL_color : MonoBehaviour
         blue = false;
         changed = false;
         current_color = Color.grey;
-        col_num = 0;
+        color = (int) color_enum.grey;
     }
 
     // Update is called once per frame
@@ -51,33 +61,37 @@ public class GLOBAL_color : MonoBehaviour
     void changeColor(){
         if (red){
                 if (yellow){
+                    if (blue){
+                        current_color = Color.white;
+                        color = (int) color_enum.white;
+                    } else {
                     current_color = orange;
-                    col_num = 2;
-                }
+                    color = 2;
+                }}
                 else if (blue){
                     current_color = purple;
-                    col_num = 6;
+                    color = (int) color_enum.purple;
                 }
                 else {
                     current_color = Color.red;
-                    col_num = 1;
+                    color = (int) color_enum.red;
                 }
             }
             else if (yellow){
                 if (blue) {
                     current_color = Color.green;
-                    col_num = 4;
+                    color = (int) color_enum.green;
                 }
                 else {
                     current_color = Color.yellow;
-                    col_num = 3;
+                    color = (int) color_enum.yellow;
                 }
             } else if (blue){
                 current_color = Color.blue;
-                col_num = 5;
+                color = (int) color_enum.blue;
             } else {
                 current_color = Color.grey;
-                col_num = 0;
+                color = (int) color_enum.grey;
             }
     }
 }
