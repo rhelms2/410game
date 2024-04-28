@@ -20,7 +20,7 @@ public class Block_Red : GLOBAL_color
     // Update is called once per frame
     void Update()
     {
-        if (col_num == 1 || col_num == 2 || col_num == 6){
+        if (color == 1 || color == 2 || color == 6){
             if (isOn == false){
                 isOn = true;
                 Physics.IgnoreLayerCollision(9, 11, false);
