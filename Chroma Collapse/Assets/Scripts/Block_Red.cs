@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class Block_Red : GLOBAL_color
 {
-
     private bool isOn;
-    public Rigidbody rb;
-    //Collider obj_Collider;
+    //Rigidbody blocks;
+    //BoxCollider bc;
 
     // Start is called before the first frame update
     void Start()
     {
+        //blocks = GetComponent<Rigidbody>();
+        //bc = GetComponent<BoxCollider>();
+        Physics.IgnoreLayerCollision(9, 11, true);
         isOn = false;
-        //rb.detectCollisions = false;
-
-        //obj_Collider = GetComponent<Collider>();
     }
 
     // Update is called once per frame
@@ -25,18 +24,13 @@ public class Block_Red : GLOBAL_color
         if (color == 1 || color == 2 || color == 6){
             if (isOn == false){
                 isOn = true;
-
-                rb.detectCollisions = true;
-                //obj_Collider.enabled = true;
-
-                 
-
+                Physics.IgnoreLayerCollision(9, 11, false);
             }
         }else{
-             isOn = false;
-             rb.detectCollisions = false;
-
-            //obj_Collider.enabled = false;
+            if (isOn == true){
+                isOn = false;
+                Physics.IgnoreLayerCollision(9, 11, true);
+            }
         }
     }
 }
