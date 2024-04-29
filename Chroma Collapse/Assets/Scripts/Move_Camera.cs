@@ -23,37 +23,42 @@ public class Move_Camera : MonoBehaviour
     private Vector3 _startPos;
     private CharacterController _controller;
 
-    private void Awake(){
+    private void Awake()
+    {
         _controller = GetComponent<CharacterController>();
         _startPos = _cam.localPosition;
     }
 
-    private Vector3 FootMotion(){
+    private Vector3 FootMotion()
+    {
         Vector3 pos = Vector3.zero;
         pos.y += Mathf.Sin(Time.time * _freq) * _amp;
         pos.x += Mathf.Cos(Time.time * _freq / 2) * _amp * 2;
         return pos;
     }
 
-    private void CheckMotion(){
-        float speed  = new Vector3(_controller.velocity.x, 0, _controller.velocity.z).magnitude;
+    private void CheckMotion()
+    {
+        float speed = new Vector3(_controller.velocity.x, 0, _controller.velocity.z).magnitude;
         if (speed < _toggleSpeed) return;
         if (!_controller.isGrounded) return;
         PlayMotion(FootMotion());
     }
 
-    private void ResetPos(){
+    private void ResetPos()
+    {
         if (_cam.localPosition == _startPos) return;
         _cam.localPosition = Vector3.Lerp(_cam.localPosition, _startPos, 1 * Time.deltaTime);
     }
 
-    private Vector3 FocusTarget(){
+    private Vector3 FocusTarget()
+    {
         Vector3 pos = new Vector3(transform.position.x, transform.position.y + _camHolder.localPosition.y, transform.position.z);
         pos += _camHolder.forward * 15.0f;
         return pos;
     }
 
-    private void PlayMotion(Vector3 motion) {_cam.localPosition += motion;}
+    private void PlayMotion(Vector3 motion) { _cam.localPosition += motion; }
 
     // Start is called before the first frame update
     void Start()
@@ -64,7 +69,8 @@ public class Move_Camera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_enable){
+        if (_enable)
+        {
             CheckMotion();
             ResetPos();
             _cam.LookAt(FocusTarget());

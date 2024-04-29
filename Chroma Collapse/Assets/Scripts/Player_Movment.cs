@@ -54,14 +54,14 @@ public class Player_Movment : MonoBehaviour
         verticalInput = Input.GetAxisRaw("Vertical");
 
         //check jump status, grounded, and key input before jumping
-        if(Input.GetKey(jumpKey) && jumpStatus && grounded)
+        if (Input.GetKey(jumpKey) && jumpStatus && grounded)
         {
             //set status
             //jumpStatus = false;
 
             //invoke function
             Jump();
-            
+
 
             //uncomment this if you want to continuously jump with a cooldown; I.E. holding nspace bar keeps jumping.
             //Invoke(nameof(JumpReset), jumpCooldown);
@@ -76,13 +76,13 @@ public class Player_Movment : MonoBehaviour
         //always walk in the direction you're looking
         movementDir = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-        if(grounded)
+        if (grounded)
             //apply force. constant 10 is just to make things go a bit faster and compound with movespeed.
             rb.AddForce(movementDir.normalized * moveSpeed * 10f, ForceMode.Force);
-            
-            //apply air speed when airborne
-        else if(!grounded)
-            rb.AddForce(movementDir.normalized * moveSpeed * 10f *airMult, ForceMode.Force);
+
+        //apply air speed when airborne
+        else if (!grounded)
+            rb.AddForce(movementDir.normalized * moveSpeed * 10f * airMult, ForceMode.Force);
     }
 
     //function to handle jumping
@@ -107,9 +107,9 @@ public class Player_Movment : MonoBehaviour
     {
         //keep track of current velocity
         Vector3 currVelocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-        
+
         //check if current velocity exceed move speed
-        if(currVelocity.magnitude > moveSpeed)
+        if (currVelocity.magnitude > moveSpeed)
         {
             //apply speed limitation
             Vector3 velocityLimiter = currVelocity.normalized * moveSpeed;
