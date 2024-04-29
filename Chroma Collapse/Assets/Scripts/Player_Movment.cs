@@ -34,12 +34,17 @@ public class Player_Movment : MonoBehaviour
     Vector3 movementDir;
     Rigidbody rb;
 
+    //for footsteps
+    public AudioSource footsteps;
+    bool walking;
+
     // Start is called before the first frame update
     void Start()
     {
         //aquire rigid body and lock rotation
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        walking = false;
     }
     private void OnCollisionStay(Collision collision)
     {
@@ -67,6 +72,22 @@ public class Player_Movment : MonoBehaviour
             //Invoke(nameof(JumpReset), jumpCooldown);
 
             grounded = false;
+        }
+        if ((horizontalInput != 0 || verticalInput != 0) && grounded)
+        {
+            if (!walking)
+            {
+                walking = true;
+                footsteps.Play();
+            }
+        }
+        else
+        {
+            if (walking)
+            {
+                walking = false;
+                footsteps.Stop();
+            }
         }
     }
 
