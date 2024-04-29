@@ -19,6 +19,6 @@ public class Color_swap : GLOBAL_color
     {
         // Call SetColor using the shader property name "_Color" and setting the color to red
        Object.GetComponent<Renderer>().material.color = current_color;
-       Debug.Log("IN COLOR_SWAP: " + current_color);
+       // Debug.Log("IN COLOR_SWAP: " + current_color);
     }
 }

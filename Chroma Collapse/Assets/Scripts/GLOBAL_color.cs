@@ -55,7 +55,7 @@ public class GLOBAL_color : MonoBehaviour
             changeColor();
         }
 
-        Debug.Log("current_color = " + current_color);
+        // Debug.Log("current_color = " + current_color);
     }
 
     void changeColor(){
