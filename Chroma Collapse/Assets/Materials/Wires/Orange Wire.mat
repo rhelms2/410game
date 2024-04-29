@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Wire
+  m_Name: Orange Wire
   m_Shader: {fileID: 4800000, guid: 90cadb91a7902754f9fe5b4563306677, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -34,7 +34,7 @@ Material:
     - _WireThickness: 100
     m_Colors:
     - _BaseColor: {r: 0, g: 0, b: 0, a: 1}
-    - _WireColor: {r: 0, g: 0, b: 0, a: 1}
+    - _WireColor: {r: 1, g: 0.58840036, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &8847544066287821806
 MonoBehaviour:
