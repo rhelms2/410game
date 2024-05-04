@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class rotate_item : MonoBehaviour
 {
-    public Vector3 rotateAmount;
+    public Vector3 rotateAmount = new Vector3(0, 120, 0);
+    
     // Start is called before the first frame update
     void Start()
     {
