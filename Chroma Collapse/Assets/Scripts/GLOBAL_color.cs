@@ -5,29 +5,31 @@ using UnityEngine;
 
 public class GLOBAL_color : MonoBehaviour
 {
-    bool red;   
-    bool yellow;  
-    bool blue;  
+    public static bool[] base_color_table = {
+        false,   // red
+        false,   // yellow
+        false,    // blue
+    };  
     public enum color_enum {
         grey,
         red,
-        orange,
         yellow,
-        green,
         blue,
+        orange,
+        green,
         purple,
         white
     }
 
     // Each entry corresponds to the color enum
     public UnityEngine.Color[] color_array = {
-        Color.grey,
+        Color.black,
         Color.red,
-        new Color(1.0f, 0.5f, 0, 0),
         Color.yellow,
-        Color.green,
         Color.blue,
-        new Color(1.0f, 0.5f, 0, 0),
+        new Color(1.0f, 0.5f, 0, 0),    // orange
+        Color.green,                    // green
+        new Color(1.0f, 0, 1.0f, 0),    // purple
         Color.white
     };
 
@@ -38,9 +40,6 @@ public class GLOBAL_color : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        red = false;
-        yellow = false;
-        blue = false;
         changed = false;
         color = (int) color_enum.grey;
     }
@@ -50,47 +49,51 @@ public class GLOBAL_color : MonoBehaviour
     {
         changed = false;
         if (Input.GetKeyDown("2")) {
-            red = !red;
+            base_color_table[0] = !base_color_table[0];
             changed = true;
         }
         else if (Input.GetKeyDown("1")) {
-            yellow = !yellow;
+            base_color_table[1] = !base_color_table[1];
             changed = true;
         }
         else if (Input.GetKeyDown("3")) {
-            blue = !blue;
+            base_color_table[2] = !base_color_table[2];
             changed = true;
         }
         if (changed){
             changeColor();
         }
 
-        // Debug.Log("current_color = " + current_color);
+        // Debug.Log("red = " + base_color_table[0]);
+        // Debug.Log("yellow = " + base_color_table[1]);
+        // Debug.Log("blue = " + base_color_table[2]);
     }
 
     void changeColor(){
-        if (red){
-                if (yellow){
-                    if (blue){
+        if (base_color_table[0]){
+                if (base_color_table[1]){
+                    if (base_color_table[2]){
                         color = (int) color_enum.white;
-                    } else {
-                    color = 2;
-                }}
-                else if (blue){
+                    } 
+                    else {
+                        color = (int) color_enum.orange;
+                    }   
+                }
+                else if (base_color_table[2]){
                     color = (int) color_enum.purple;
                 }
                 else {
                     color = (int) color_enum.red;
                 }
             }
-            else if (yellow){
-                if (blue) {
+            else if (base_color_table[1]){
+                if (base_color_table[2]) {
                     color = (int) color_enum.green;
                 }
                 else {
                     color = (int) color_enum.yellow;
                 }
-            } else if (blue){
+            } else if (base_color_table[2]){
                 color = (int) color_enum.blue;
             } else {
                 color = (int) color_enum.grey;
