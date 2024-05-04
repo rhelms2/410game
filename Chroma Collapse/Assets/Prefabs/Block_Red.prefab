@@ -147,16 +147,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color_array:
-  - {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
   - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 1, g: 0.5, b: 0, a: 0}
   - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
   - {r: 0, g: 0, b: 1, a: 1}
   - {r: 1, g: 0.5, b: 0, a: 0}
+  - {r: 0, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0, b: 1, a: 0}
   - {r: 1, g: 1, b: 1, a: 1}
   trigger_color: 1
+  tolerance: 0
+  negate: 0
   rb: {fileID: 8847956373395141548}
   fill: {fileID: 2100000, guid: 07b55f4b52f6c7d408b8c1f7d5de9580, type: 2}
+  transparent: {fileID: 2100000, guid: 07b55f4b52f6c7d408b8c1f7d5de9580, type: 2}
   wire: {fileID: 2100000, guid: 2d90b7d5ba456824ea4119e17400d25e, type: 2}
   obj: {fileID: 4955993069264898258}
