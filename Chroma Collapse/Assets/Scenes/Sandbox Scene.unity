@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 30338687}
   - component: {fileID: 30338686}
   - component: {fileID: 30338685}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1873,6 +1873,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block_Yellow
       objectReference: {fileID: 0}
+    - target: {fileID: 1287433365305298752, guid: b54eef976e2143f47abda3b48d8efa0c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2007826067467811304, guid: b54eef976e2143f47abda3b48d8efa0c,
         type: 3}
       propertyPath: m_IsKinematic
@@ -2148,6 +2153,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Block_Orange
+      objectReference: {fileID: 0}
+    - target: {fileID: 3251809486487794065, guid: 90a26c631da0cd74d9875651fd43fe12,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7035417179271887566, guid: 90a26c631da0cd74d9875651fd43fe12,
         type: 3}
@@ -2446,6 +2456,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block_Yellow (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1287433365305298752, guid: b54eef976e2143f47abda3b48d8efa0c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2007826067467811304, guid: b54eef976e2143f47abda3b48d8efa0c,
         type: 3}
       propertyPath: m_IsKinematic
@@ -2593,7 +2608,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1860468136}
-  m_Material: {fileID: 13400000, guid: ac4f49c8177584c4882b6f1628b0223d, type: 2}
+  m_Material: {fileID: 13400000, guid: 3726cfddda2c58a408e9723405ef9b7b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2883,8 +2898,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   grounded: 0
-  groundDrag: 9
-  jumpForce: 5.5
+  groundDrag: 11
+  jumpForce: 6.5
   jumpCooldown: 0.25
   airMult: 0.2
   footsteps: {fileID: 724406167}

@@ -46,10 +46,10 @@ public class Player_Movment : MonoBehaviour
         rb.freezeRotation = true;
         walking = false;
     }
-    private void OnCollisionStay(Collision collision)
+    /*private void OnCollisionStay(Collision collision)
     {
         grounded = true;
-    }
+    }*/
 
     //get axis for the player object
     private void KeyboardInput()
@@ -62,14 +62,14 @@ public class Player_Movment : MonoBehaviour
         if (Input.GetKey(jumpKey) && jumpStatus && grounded)
         {
             //set status
-            //jumpStatus = false;
+            jumpStatus = false;
 
             //invoke function
             Jump();
 
-
+            grounded = false;
             //uncomment this if you want to continuously jump with a cooldown; I.E. holding nspace bar keeps jumping.
-            //Invoke(nameof(JumpReset), jumpCooldown);
+            Invoke(nameof(JumpReset), jumpCooldown);
 
             grounded = false;
         }
@@ -141,7 +141,7 @@ public class Player_Movment : MonoBehaviour
     void Update()
     {
         //perform raycast from player object with distance of half its height plus some extra (0.2f) to whatever ground is in this context.
-        //grounded = Physics.Raycast(transform.position, Vector3.down, height * 0.5f + 0.2f, groundTarget);
+        grounded = Physics.Raycast(transform.position, Vector3.down, height * 0.5f + 0.2f, groundTarget);
 
         //invoke functions
         KeyboardInput();
