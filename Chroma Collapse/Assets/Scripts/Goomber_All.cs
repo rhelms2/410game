@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Goomber_All : MonoBehaviour
+public class Goomber_All : GLOBAL_playerhealth
 {
     public GameObject player;
     //https://www.youtube.com/watch?v=BGe5HDsyhkY
@@ -40,9 +40,16 @@ public class Goomber_All : MonoBehaviour
         }
     }
 
+    void checkCollision(){
+        if (Vector3.Distance(player.transform.position, transform.position) < 2f){
+            if (hit_cooldown == false) hit_cooldown = true;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
+        checkCollision();
         counter += Time.deltaTime;
         if (Vector3.Distance(player.transform.position, transform.position) < 10f){
             //In radius, follow the player
