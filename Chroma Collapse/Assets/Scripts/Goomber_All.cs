@@ -13,6 +13,8 @@ public class Goomber_All : GLOBAL_playerhealth
     Vector3 dir;
     private Rigidbody rb;
     Coroutine turning = null;
+    public color_enum myCol;
+    bool isOn = false;
     //NOTE: this is super cheap, but if you have the object floating
     //slightly above the ground the script below and the rigidbody
     //will make it jitter like it's walking around
@@ -49,9 +51,11 @@ public class Goomber_All : GLOBAL_playerhealth
     // Update is called once per frame
     void Update()
     {
-        checkCollision();
+        if ((int)myCol == color) isOn = true;
+        else isOn = false;
+        if (isOn) checkCollision();
         counter += Time.deltaTime;
-        if (Vector3.Distance(player.transform.position, transform.position) < 10f){
+        if ((Vector3.Distance(player.transform.position, transform.position) < 10f) && isOn){
             //In radius, follow the player
             if (turning == null){
                 Vector3 looking = player.transform.position;

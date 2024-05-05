@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GLOBAL_playerhealth : MonoBehaviour
+public class GLOBAL_playerhealth : GLOBAL_color
 {
     public const int MAX_HEALTH = 3;
     public static int current_health;
