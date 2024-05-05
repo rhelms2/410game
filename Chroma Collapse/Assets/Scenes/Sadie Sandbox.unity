@@ -1929,8 +1929,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d91de7dbba2bdd34d9749341787f817f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current_health: 0
-  hit_cooldown: 0
+  color_array:
+  - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  - {r: 0, g: 0, b: 1, a: 1}
+  - {r: 1, g: 0.5, b: 0, a: 0}
+  - {r: 0, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0, b: 1, a: 0}
+  - {r: 1, g: 1, b: 1, a: 1}
+  zoosmellPooplord: 1
 --- !u!1 &603914743
 GameObject:
   m_ObjectHideFlags: 0
@@ -2488,8 +2496,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 657e2ffbac47e794e8e407777418f2e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color_array:
+  - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  - {r: 0, g: 0, b: 1, a: 1}
+  - {r: 1, g: 0.5, b: 0, a: 0}
+  - {r: 0, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0, b: 1, a: 0}
+  - {r: 1, g: 1, b: 1, a: 1}
+  zoosmellPooplord: 1
   player: {fileID: 1507407968}
   moveSpeed: 5
+  myCol: 1
 --- !u!54 &737220542
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3452,8 +3471,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7e93dfa0b2643b459d41a32c2c721a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current_health: 3
-  hit_cooldown: 0
+  color_array:
+  - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  - {r: 0, g: 0, b: 1, a: 1}
+  - {r: 1, g: 0.5, b: 0, a: 0}
+  - {r: 0, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0, b: 1, a: 0}
+  - {r: 1, g: 1, b: 1, a: 1}
+  zoosmellPooplord: 1
   healthImg:
   - {fileID: 1528479811}
   - {fileID: 1060817569}
@@ -5465,6 +5492,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Goomber_Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 115728799498724181, guid: 040083bf748e9c640a0a39859face60d,
+        type: 3}
+      propertyPath: m_TagString
+      value: red
       objectReference: {fileID: 0}
     - target: {fileID: 5748035023688158486, guid: 040083bf748e9c640a0a39859face60d,
         type: 3}
