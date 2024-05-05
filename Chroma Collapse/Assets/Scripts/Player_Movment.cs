@@ -34,6 +34,9 @@ public class Player_Movment : MonoBehaviour
     Vector3 movementDir;
     Rigidbody rb;
 
+    //adding some more physics elements like gravity to make movment feel better
+    public float gravity = -9.8f;
+
     //for footsteps
     public AudioSource footsteps;
     bool walking;
@@ -41,6 +44,7 @@ public class Player_Movment : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        grounded = true;
         //aquire rigid body and lock rotation
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
@@ -71,7 +75,7 @@ public class Player_Movment : MonoBehaviour
             //uncomment this if you want to continuously jump with a cooldown; I.E. holding nspace bar keeps jumping.
             Invoke(nameof(JumpReset), jumpCooldown);
 
-            grounded = false;
+            //grounded = false;
         }
         if ((horizontalInput != 0 || verticalInput != 0) && grounded)
         {
@@ -105,10 +109,11 @@ public class Player_Movment : MonoBehaviour
         else if (!grounded)
             rb.AddForce(movementDir.normalized * moveSpeed * 10f * airMult, ForceMode.Force);
     }
-
+    
     //function to handle jumping
     void Jump()
     {
+        grounded = false;
         //reset y velocity to make jump height more consistent.
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
@@ -121,6 +126,7 @@ public class Player_Movment : MonoBehaviour
     //called after jump to reset jumpStatus
     void JumpReset()
     {
+        //grounded = false;
         jumpStatus = true;
     }
     //speed limiterto prevent high-velocity and feeling like you're on ice
@@ -152,6 +158,8 @@ public class Player_Movment : MonoBehaviour
             rb.drag = groundDrag;
         else
             rb.drag = 0;
+
+
     }
 
     private void FixedUpdate()
