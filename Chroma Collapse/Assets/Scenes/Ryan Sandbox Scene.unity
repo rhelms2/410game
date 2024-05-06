@@ -307,10 +307,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 206611433}
-  minThickness: 0.2
-  maxThickness: 0.75
+  minThickness: 0.3
+  maxThickness: 0.4
   minDistance: 1
-  maxDistance: 100
+  maxDistance: 75
 --- !u!1 &16868369
 GameObject:
   m_ObjectHideFlags: 0

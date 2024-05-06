@@ -45,6 +45,10 @@ public class MeshWireframeScalable : MonoBehaviour
     // Utility function to map a value from one range to another
     private float Map(float value, float fromMin, float fromMax, float toMin, float toMax)
     {
+        if (value >= maxDistance)
+        {
+            return 0f;
+        }
         return toMin + (value - fromMin) * (toMax - toMin) / (fromMax - fromMin);
     }
 }
