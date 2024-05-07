@@ -5,11 +5,20 @@ using UnityEngine;
 
 public class GLOBAL_color : MonoBehaviour
 {
+    // This table keeps track of if the player has access to these colors on the color switcher
+    public static bool[] inventory_activation = {
+        false,   // red
+        false,   // yellow
+        false    // blue
+    };
+    
+    // This table keeps track of the active base colors
     public static bool[] base_color_table = {
         false,   // red
         false,   // yellow
-        false,    // blue
+        false    // blue
     };  
+    
     public enum color_enum {
         grey,
         red,
