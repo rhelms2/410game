@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO.Compression;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class block_collision_switcher : GLOBAL_color
@@ -18,6 +17,12 @@ public class block_collision_switcher : GLOBAL_color
     public Material transparent;
     public Material wire;
     public GameObject obj;
+
+    public Camera mainCamera; // Reference to the main camera
+    public float minThickness = 0f;
+    public float maxThickness = .3f;
+    public float minDistance = 1f;
+    public float maxDistance = 50f;
 
     // Start is called before the first frame update
     void Start()
@@ -81,9 +86,17 @@ public class block_collision_switcher : GLOBAL_color
             SetCollision();
         }
         else {
+            Debug.Log("entered");
             obj.GetComponent<Renderer>().material = wire;
             isOn = negate;
             rb.detectCollisions = negate;
+
+            // Calculate distance between camera and object
+            float distance = Vector3.Distance(mainCamera.transform.position, transform.position);
+            // Map distance to thickness
+            float thickness = Map(1 / distance, 1 / maxDistance, minDistance, minThickness, maxThickness);
+
+            wire.SetFloat("_Wireframe_Thickness", thickness);
         }
 
         obj.GetComponent<Renderer>().material.color = color_array[trigger_color];
@@ -96,5 +109,17 @@ public class block_collision_switcher : GLOBAL_color
             rb.detectCollisions = !negate;
             //obj_Collider.enabled = true;
         }
+    }
+
+    private float Map(float value, float fromMin, float fromMax, float toMin, float toMax)
+    {
+        Debug.Log("distance = " + value);
+
+
+        if (value <= fromMin)
+        {
+            return 0f;
+        }
+        return toMin + (value - fromMin) * (toMax - toMin) / (fromMax - fromMin);
     }
 }

@@ -11,7 +11,7 @@ public class MeshWireframeScalable : MonoBehaviour
 
     // Define min and max thickness for scaling
     public float minThickness = 0f;
-    public float maxThickness = 10f;
+    public float maxThickness = .3f;
     public float minDistance = 1f;
     public float maxDistance = 50f;
 
@@ -29,10 +29,10 @@ public class MeshWireframeScalable : MonoBehaviour
 
         // Calculate distance between camera and object
         float distance = Vector3.Distance(mainCamera.transform.position, transform.position);
-
         // Map distance to thickness
-        float thickness = Map(distance, minDistance, maxDistance, minThickness, maxThickness);
+        float thickness = Map(1/distance, 1/maxDistance, minDistance, minThickness, maxThickness);
 
+        Debug.Log("thickness = " + thickness);
         // Apply thickness to wireframe
         UpdateWireframeThickness(thickness);
     }
@@ -45,7 +45,10 @@ public class MeshWireframeScalable : MonoBehaviour
     // Utility function to map a value from one range to another
     private float Map(float value, float fromMin, float fromMax, float toMin, float toMax)
     {
-        if (value >= maxDistance)
+        Debug.Log("distance = " + value);
+        
+
+        if (value <= fromMin)
         {
             return 0f;
         }
