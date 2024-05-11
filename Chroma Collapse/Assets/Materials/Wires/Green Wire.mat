@@ -34,7 +34,7 @@ Material:
     - _WireThickness: 100
     m_Colors:
     - _BaseColor: {r: 0, g: 1, b: 0, a: 1}
-    - _WireColor: {r: 1, g: 0.9048517, b: 0, a: 1}
+    - _WireColor: {r: 0, g: 1, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &8847544066287821806
 MonoBehaviour:

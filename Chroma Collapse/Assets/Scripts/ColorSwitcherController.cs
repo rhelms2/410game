@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
@@ -27,119 +28,136 @@ public class ColorSwitcherRotation : GLOBAL_color
 
         changed = false;
 
-        if (Input.GetKeyDown("e")) {
+        if (Input.GetKeyDown("e"))
+        {
             changed = true;
+            RotateController(false);
         }
-        else if (Input.GetKeyDown("q")) {
+        else if (Input.GetKeyDown("q"))
+        {
             changed = true;
-            negate = true;
+            RotateController(true);
         }
-        else if (Input.GetMouseButtonDown(1)) {     // Right click
+        else if (Input.GetMouseButtonDown(1))
+        {     // Right click
 
             // Change active base color based on which spire the user has selected
 
-            if (spire == 0) {
+            if ((spire == 0) && inventory_activation[0])
+            {
                 base_color_table[0] = !base_color_table[0];
                 changed = true;
             }
-            else if (spire == 1) {
+            else if ((spire == 1) && inventory_activation[1])
+            {
                 base_color_table[1] = !base_color_table[1];
                 changed = true;
             }
-            else if (spire == 2) {
+            else if ((spire == 2) && inventory_activation[2])
+            {
                 base_color_table[2] = !base_color_table[2];
                 changed = true;
             }
-            
-            if (changed) {
+
+            if (changed)
+            {
                 Changecolor();
                 changed = false;
             }
         }
-
-        if ((changed) && !(rotating)) {
-            SpireSwitcher();
-        }
-        if (rotating) {
+        if (rotating)
+        {
             RotateController();
         }
 
     }
 
-    void Changecolor() {
+    void Changecolor()
+    {
 
-        if (base_color_table[0]) {
+        if (base_color_table[0])
+        {
 
-                if (base_color_table[1]) {
+            if (base_color_table[1])
+            {
 
-                    if (base_color_table[2]) {
-                        color = (int) color_enum.white;
-                    } 
-                    else {
-                        color = (int) color_enum.orange;
-                    }   
+                if (base_color_table[2])
+                {
+                    color = (int)color_enum.white;
                 }
-                else if (base_color_table[2]) {
-                    color = (int) color_enum.purple;
+                else
+                {
+                    color = (int)color_enum.orange;
                 }
-                else {
-                    color = (int) color_enum.red;
-                }
-
             }
-            else if (base_color_table[1]) {
-
-                if (base_color_table[2]) {
-                    color = (int) color_enum.green;
-                }
-                else {
-                    color = (int) color_enum.yellow;
-                }
-            } 
-            else if (base_color_table[2]) {
-                color = (int) color_enum.blue;
-            } 
-            else {
-                color = (int) color_enum.grey;
+            else if (base_color_table[2])
+            {
+                color = (int)color_enum.purple;
             }
+            else
+            {
+                color = (int)color_enum.red;
+            }
+
+        }
+        else if (base_color_table[1])
+        {
+
+            if (base_color_table[2])
+            {
+                color = (int)color_enum.green;
+            }
+            else
+            {
+                color = (int)color_enum.yellow;
+            }
+        }
+        else if (base_color_table[2])
+        {
+            color = (int)color_enum.blue;
+        }
+        else
+        {
+            color = (int)color_enum.grey;
+        }
 
     }
 
-    void RotateController() {
+    void RotateController(bool counterclockwise = true)
+    {
+        if (!rotating)
+        {
+            Debug.Log(spire);
+            spire += 1 + 1 * Convert.ToInt32(counterclockwise);
+            Debug.Log(spire);
+            spire %= 3;
+            Debug.Log(spire);
+            actual_rotation = 0;
+            rotating = true;
+            if (counterclockwise)
+            {
+                negate = true;
+            }
+        }
 
-        if (actual_rotation == target_rotation) {     // target_rotation reached, don't need to rotate anymore
+        if (actual_rotation == target_rotation)
+        {     // target_rotation reached, don't need to rotate anymore
             rotating = false;
             negate = false;
         }
-        else {
+        else
+        {
 
-            if (negate) {
-                transform.Rotate(new UnityEngine.Vector3 (0, -rotation_speed, 0));
+            if (negate)
+            {
+                transform.Rotate(new UnityEngine.Vector3(0, -rotation_speed, 0));
             }
-            else {
-                transform.Rotate(new UnityEngine.Vector3 (0, rotation_speed, 0));
+            else
+            {
+                transform.Rotate(new UnityEngine.Vector3(0, rotation_speed, 0));
             }
 
             actual_rotation += rotation_speed;
         }
-    }
-
-    void SpireSwitcher() {
-
-        if (negate) {
-            spire--;
-            if (spire < 0) {
-                spire = 2;
-            }
-        }
-        else {
-            spire++;
-            if (spire > 2) {
-                spire = 0;
-            }
-        }
-
-        rotating = true;
-        actual_rotation = 0;
     }
 }
