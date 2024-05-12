@@ -74,8 +74,8 @@ public class block_collision_switcher : GLOBAL_color
             curcol = color;     // update curcol for future comparisons
         }
 
-        Debug.Log("Color: " + color + "Curcol: " + curcol);
-        Debug.Log("transparency: " + transparency);
+        //Debug.Log("Color: " + color + "Curcol: " + curcol);
+        //Debug.Log("transparency: " + transparency);
     }
 
     int NumActiveColors() {
