@@ -12,9 +12,15 @@ public class Player_Inventory : GLOBAL_color
     public GameObject gun;
     static public bool inventory_changed = false;
 
+    //create grey door "key" that is activates after the player gets the color swticher.
+    static public bool grey_key = false;
+
     // Start is called before the first frame update
     void Start()
     {
+        //set key to false on start
+        grey_key = false;
+
         ColorSwitcher.SetActive(false);
     }
 
@@ -27,12 +33,15 @@ public class Player_Inventory : GLOBAL_color
         }
     }
 
+
     void UpdateUI() {
         foreach (GameObject obj in inventory) {
 
             Debug.Log("Updating UI... current game object: " + obj);
 
             if (obj == ColorSwitcher) {
+                //set grey key to active.
+                grey_key = true;
 
                 // sets the color switcher to active
 

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - red
+  - Door
   layers:
   - Default
   - TransparentFX
