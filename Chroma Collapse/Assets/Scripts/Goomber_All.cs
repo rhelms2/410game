@@ -51,8 +51,8 @@ public class Goomber_All : GLOBAL_playerhealth
     // Update is called once per frame
     void Update()
     {
-        if ((int)myCol == color) isOn = true;
-        else isOn = false;
+        if ((int)myCol == color) isOn = false;
+        else isOn = true;
         if (isOn) checkCollision();
         counter += Time.deltaTime;
         if ((Vector3.Distance(player.transform.position, transform.position) < 10f) && isOn){
