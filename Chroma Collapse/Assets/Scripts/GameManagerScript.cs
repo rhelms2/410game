@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManagerScript : MonoBehaviour
+public class GameManagerScript : Player_Inventory
 {
+    private static GameManagerScript instance;
+    public GameObject player;
+    public Transform respawn_point;
+
     //from https://www.youtube.com/watch?v=pKFtyaAPzYo
 
     public GameObject gameOverUI;
@@ -27,7 +31,12 @@ public class GameManagerScript : MonoBehaviour
 
     public void Restart()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex);
+        if (inventory.Count > 0) {
+            player.transform.position = respawn_point.position;
+        }
+        else {
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(currentSceneIndex);
+        }
     }
 }
