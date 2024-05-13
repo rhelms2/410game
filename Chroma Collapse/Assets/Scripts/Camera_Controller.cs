@@ -11,7 +11,7 @@ public class NewBehaviourScript : MonoBehaviour
     public float sensX;
     public float sensY;
 
-    //keep track of palyer position
+    //keep track of player position
     public Transform orientation;
 
     //set up rotation values to hold the movement data of the mouse

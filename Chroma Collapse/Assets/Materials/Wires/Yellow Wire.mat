@@ -29,17 +29,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Glossiness: 0.5
-    - _MaxTriSize: 0
-    - _Metallic: 0
-    - _WireSmoothness: 0
-    - _WireThickness: 0
-    - _WireframeAliasing: 1.5
+    - _MaxTriSize: 48
+    - _WireSmoothness: 3
+    - _WireThickness: 100
     m_Colors:
-    - _BaseColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.9990063, g: 1, b: 0, a: 1}
     - _WireColor: {r: 1, g: 0.9048517, b: 0, a: 1}
-    - _WireframeColour: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &8847544066287821806
 MonoBehaviour:

@@ -43,17 +43,17 @@ public class ColorSwitcherRotation : GLOBAL_color
 
             // Change active base color based on which spire the user has selected
 
-            if (spire == 0)
+            if ((spire == 0) && inventory_activation[0])
             {
                 base_color_table[0] = !base_color_table[0];
                 changed = true;
             }
-            else if (spire == 1)
+            else if ((spire == 1) && inventory_activation[1])
             {
                 base_color_table[1] = !base_color_table[1];
                 changed = true;
             }
-            else if (spire == 2)
+            else if ((spire == 2) && inventory_activation[2])
             {
                 base_color_table[2] = !base_color_table[2];
                 changed = true;
