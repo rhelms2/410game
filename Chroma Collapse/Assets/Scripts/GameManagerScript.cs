@@ -12,6 +12,7 @@ public class GameManagerScript : Player_Inventory
     //from https://www.youtube.com/watch?v=pKFtyaAPzYo
 
     public GameObject gameOverUI;
+    
     // Start is called before the first frame update
     void Start()
     {
