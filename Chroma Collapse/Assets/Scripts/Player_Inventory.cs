@@ -37,7 +37,7 @@ public class Player_Inventory : GLOBAL_color
     void UpdateUI() {
         foreach (GameObject obj in inventory) {
 
-            Debug.Log("Updating UI... current game object: " + obj);
+            // Debug.Log("Updating UI... current game object: " + obj);
 
             if (obj == ColorSwitcher) {
                 //set grey key to active.
