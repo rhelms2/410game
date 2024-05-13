@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
+    private static GameManagerScript instance;
+
     //from https://www.youtube.com/watch?v=pKFtyaAPzYo
 
     public GameObject gameOverUI;
