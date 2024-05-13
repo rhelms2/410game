@@ -1,16 +1,6 @@
 # Blender 4.1.1 MTL File: 'None'
 # www.blender.org
 
-newmtl Armor_Capsule.001
-Ns 96.078453
-Ka 1.000000 1.000000 1.000000
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.000000
-d 1.000000
-illum 2
-map_Kd C:/Users/Tripl/Desktop/School/CS 410/410game/Mobile - Mega Man X DiVE - Armor Capsule/Armor Capsule/Armor Capsule.png
-
 newmtl Armor_Capsule.002
 Ns 96.078453
 Ka 1.000000 1.000000 1.000000
@@ -19,7 +9,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd C:/Users/Tripl/Desktop/School/CS 410/410game/Mobile - Mega Man X DiVE - Armor Capsule/Armor Capsule/Armor Capsule.png
+map_Kd Armor Capsule.png
 
 newmtl Armor_Capsule.003
 Ns 96.078453
