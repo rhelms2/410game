@@ -41,6 +41,8 @@ public class Player_Movment : MonoBehaviour
     public AudioSource footsteps;
     bool walking;
 
+    public Transform respawn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -162,6 +164,14 @@ public class Player_Movment : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("InstantDeath"))
+        {
+            Respawn();
+        }
+    }
+
 
     private void FixedUpdate()
     {
@@ -169,5 +179,10 @@ public class Player_Movment : MonoBehaviour
         MovePlayer();
     }
     //added from rollaball
+
+    private void Respawn()
+    {
+        rb.transform.position = respawn.position + new Vector3(0f, 0.2f, 0f);
+    }
 
 }
