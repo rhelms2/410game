@@ -162,6 +162,7 @@ public class Player_Movment : MonoBehaviour
 
     }
 
+
     private void FixedUpdate()
     {
         //invoke function
