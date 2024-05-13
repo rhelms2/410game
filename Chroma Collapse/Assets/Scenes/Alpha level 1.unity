@@ -29801,7 +29801,7 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   zoosmellPooplord: 1
   gameover: 0
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 120348793}
   healthImg:
   - {fileID: 665363830}
   - {fileID: 1150282090}
