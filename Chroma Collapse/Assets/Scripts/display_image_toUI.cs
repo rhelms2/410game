@@ -24,12 +24,14 @@ public class display_image_to_ui : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         // Check if the other collider belongs to the player object
-        if (other.CompareTag("Player") && image_active)
+        if (other.CompareTag("Player"))
         {
             in_range = false;
-            image_active = false;
-            target_display.color = new Color(1, 1, 1, 0);
-            sound_effect.Play();
+            if (image_active) {
+                image_active = false;
+                target_display.color = new Color(1, 1, 1, 0);
+                sound_effect.Play();
+            }
         }
     }
 
