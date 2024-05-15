@@ -8,6 +8,7 @@ public class Item_Pickup : Player_Inventory
 {
     public GameObject player;
     public GameObject item;
+    public AudioSource pickup_noise;
     public float pickup_distance;
     
     // Start is called before the first frame update
@@ -26,8 +27,9 @@ public class Item_Pickup : Player_Inventory
 
             inventory.Add(item);
             inventory_changed = true;
+            pickup_noise.Play();
 
-            Debug.Log("Adding item to player inventory. Item: " + inventory.Last());
+            // Debug.Log("Adding item to player inventory. Item: " + inventory.Last());
 
             gameObject.SetActive(false);
         }

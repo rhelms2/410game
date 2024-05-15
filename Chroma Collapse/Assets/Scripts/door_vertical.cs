@@ -10,7 +10,7 @@ public class door_vertical : MonoBehaviour
     public GameObject player;
     int currTrigger = 0; //0 - closed, 1 - open with trigger1, 2 - opened with trigger2
     public int moveDist = 10;
-    public float mspeed = 0.25f;
+    public float mspeed = 0.20f;
     float originY;
     // Start is called before the first frame update
     void Start()
@@ -34,10 +34,12 @@ public class door_vertical : MonoBehaviour
        if (Vector3.Distance(player.transform.position, trigger1.transform.position) < 2f){
             if (currTrigger == 0) {
                 currTrigger = 1;
+                gameObject.GetComponent<AudioSource>().Play(0);
                 StartCoroutine(moveDoor(1));
             }
             else if (currTrigger == 2) {
                 currTrigger = 0;
+                gameObject.GetComponent<AudioSource>().Play(0);
                 StartCoroutine(moveDoor(-1));
             }
        } 
