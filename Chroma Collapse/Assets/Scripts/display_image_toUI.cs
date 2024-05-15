@@ -8,6 +8,7 @@ public class display_image_to_ui : MonoBehaviour
 {
     public Sprite image;
     public Image target_display;
+    public AudioSource sound_effect;
     private bool in_range = false;
     private bool image_active = false;
 
@@ -23,11 +24,12 @@ public class display_image_to_ui : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         // Check if the other collider belongs to the player object
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && image_active)
         {
             in_range = false;
             image_active = false;
             target_display.color = new Color(1, 1, 1, 0);
+            sound_effect.Play();
         }
     }
 
@@ -39,10 +41,12 @@ public class display_image_to_ui : MonoBehaviour
                 image_active = true;
                 target_display.sprite = image;
                 target_display.color = new Color(1, 1, 1, 1);
+                sound_effect.Play();
             }
             else if (image_active && Input.GetKeyDown("f")) {
                 image_active = false;
                 target_display.color = new Color(1, 1, 1, 0);
+                sound_effect.Play();
             }
         }
     }
