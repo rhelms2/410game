@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 
 public class Player_Inventory : GLOBAL_color
 {
     public static List<GameObject> inventory = new List<GameObject>();
+    public bool testing = false;
     public GameObject ColorSwitcher;
     public GameObject red_crystal;
     public GameObject yellow_crystal;
@@ -15,13 +17,32 @@ public class Player_Inventory : GLOBAL_color
     //create grey door "key" that is activates after the player gets the color swticher.
     static public bool grey_key = false;
 
+    void Awake() {
+
+        // If testing the game, activate all inventory slots
+        if (testing) {
+            inventory.Add(ColorSwitcher);
+            inventory.Add(red_crystal);
+            inventory.Add(yellow_crystal);
+            inventory.Add(blue_crystal);
+            int i = 0;
+            foreach (bool item in inventory_activation) {
+                inventory_activation[i] = true;
+                i++;
+            }
+            UpdateUI();
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        //set key to false on start
-        grey_key = false;
+        if (!testing) {
+            //set key to false on start
+            grey_key = false;
 
-        ColorSwitcher.SetActive(false);
+            ColorSwitcher.SetActive(false);
+        }
     }
 
     // Update is called once per frame
