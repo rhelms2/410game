@@ -6,6 +6,7 @@ TagManager:
   tags:
   - red
   - Door
+  - Gravity Sensitive Object
   layers:
   - Default
   - TransparentFX

@@ -130,11 +130,11 @@ public class ColorSwitcherRotation : GLOBAL_color
     {
         if (!rotating)
         {
-            Debug.Log(spire);
+            // Debug.Log(spire);
             spire += 1 + 1 * Convert.ToInt32(counterclockwise);
-            Debug.Log(spire);
+            // Debug.Log(spire);
             spire %= 3;
-            Debug.Log(spire);
+            // Debug.Log(spire);
             actual_rotation = 0;
             rotating = true;
             if (counterclockwise)
