@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ShotBehavior : GLOBAL_color
+//https://www.youtube.com/watch?v=Yl9MhhoBkFU
+
+public class ShotBehavior : ColorSwitcherRotation
 {
 
     public Vector3 m_target;
@@ -10,6 +12,7 @@ public class ShotBehavior : GLOBAL_color
     public GameObject self;
 
     // Update is called once per frame
+    [System.Obsolete]
     void Update()
     {
         // transform.position += transform.forward * Time.deltaTime * 300f;// The step size is equal to speed times frame time.
@@ -25,6 +28,12 @@ public class ShotBehavior : GLOBAL_color
             }
             transform.position = Vector3.MoveTowards(transform.position, m_target, step);
         }
+        // This should change emission color of bullet
+        self.GetComponent<Light>().color = color_array[color];
+        collisionExplosion.GetComponent<Renderer>().sharedMaterial.SetColor("_EmissionColor", color_array[color]);
+        collisionExplosion.GetComponent<Renderer>().sharedMaterial.SetColor("_Color", color_array[color]);
+        collisionExplosion.GetComponent<ParticleSystem>().startColor = color_array[color];
+        //self.GetComponent<Light>().color = Color.blue;
 
     }
 
@@ -39,7 +48,7 @@ public class ShotBehavior : GLOBAL_color
         {
             GameObject explosion = (GameObject)Instantiate(
                 collisionExplosion, transform.position, transform.rotation);
-
+            
             Destroy(gameObject);
             Destroy(explosion, 1f);
         }
