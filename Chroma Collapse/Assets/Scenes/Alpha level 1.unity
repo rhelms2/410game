@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731722, g: 0.13414752, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -314,6 +314,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
+        type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3661,7 +3666,7 @@ PrefabInstance:
         type: 3}
       propertyPath: wire
       value: 
-      objectReference: {fileID: 2100000, guid: b57f1ee0bb6aa9b44831d575710a45f5, type: 2}
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     - target: {fileID: 6396846992203572632, guid: 90a26c631da0cd74d9875651fd43fe12,
         type: 3}
       propertyPath: negate
@@ -5976,6 +5981,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
+        type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7641,6 +7651,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9e794f294982a114ba446120ec045f2c, type: 2}
     - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
         type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
+    - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
+        type: 3}
       propertyPath: negate
       value: 0
       objectReference: {fileID: 0}
@@ -8447,6 +8462,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
+        type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9254,6 +9274,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
+        type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9343,6 +9368,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9052968331824100688, guid: b54eef976e2143f47abda3b48d8efa0c,
+        type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10721,6 +10751,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
+        type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13193,6 +13228,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9052968331824100688, guid: b54eef976e2143f47abda3b48d8efa0c,
+        type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14613,7 +14653,7 @@ PrefabInstance:
         type: 3}
       propertyPath: wire
       value: 
-      objectReference: {fileID: 2100000, guid: b57f1ee0bb6aa9b44831d575710a45f5, type: 2}
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     - target: {fileID: 6396846992203572632, guid: 90a26c631da0cd74d9875651fd43fe12,
         type: 3}
       propertyPath: negate
@@ -18802,6 +18842,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
+        type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20551,6 +20596,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
         type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
+    - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
+        type: 3}
       propertyPath: negate
       value: 1
       objectReference: {fileID: 0}
@@ -21809,6 +21859,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
+        type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
         type: 3}
       propertyPath: negate
@@ -24877,6 +24932,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
         type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
+    - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
+        type: 3}
       propertyPath: negate
       value: 1
       objectReference: {fileID: 0}
@@ -27825,6 +27885,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
+        type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29927,6 +29992,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
         type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
+    - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
+        type: 3}
       propertyPath: negate
       value: 1
       objectReference: {fileID: 0}
@@ -30530,7 +30600,7 @@ PrefabInstance:
         type: 3}
       propertyPath: wire
       value: 
-      objectReference: {fileID: 2100000, guid: b57f1ee0bb6aa9b44831d575710a45f5, type: 2}
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     - target: {fileID: 6396846992203572632, guid: 90a26c631da0cd74d9875651fd43fe12,
         type: 3}
       propertyPath: negate
@@ -30675,6 +30745,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
+        type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
         type: 3}
       propertyPath: negate
@@ -31038,6 +31113,11 @@ PrefabInstance:
       propertyPath: fill
       value: 
       objectReference: {fileID: 2100000, guid: 9e794f294982a114ba446120ec045f2c, type: 2}
+    - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
+        type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
         type: 3}
       propertyPath: negate
@@ -37054,6 +37134,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
         type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
+    - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
+        type: 3}
       propertyPath: negate
       value: 0
       objectReference: {fileID: 0}
@@ -37141,6 +37226,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
+        type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
         type: 3}
       propertyPath: negate
@@ -38699,6 +38789,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9052968331824100688, guid: b54eef976e2143f47abda3b48d8efa0c,
         type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
+    - target: {fileID: 9052968331824100688, guid: b54eef976e2143f47abda3b48d8efa0c,
+        type: 3}
       propertyPath: negate
       value: 0
       objectReference: {fileID: 0}
@@ -38780,6 +38875,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
+        type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
         type: 3}
       propertyPath: negate
@@ -39131,6 +39231,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9052968331824100688, guid: b54eef976e2143f47abda3b48d8efa0c,
+        type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     - target: {fileID: 9052968331824100688, guid: b54eef976e2143f47abda3b48d8efa0c,
         type: 3}
       propertyPath: negate
@@ -43725,7 +43830,7 @@ PrefabInstance:
         type: 3}
       propertyPath: wire
       value: 
-      objectReference: {fileID: 2100000, guid: b57f1ee0bb6aa9b44831d575710a45f5, type: 2}
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     - target: {fileID: 6396846992203572632, guid: 90a26c631da0cd74d9875651fd43fe12,
         type: 3}
       propertyPath: negate
@@ -44032,7 +44137,7 @@ PrefabInstance:
         type: 3}
       propertyPath: wire
       value: 
-      objectReference: {fileID: 2100000, guid: a333d45599d9f2a42b11ef871323c1ad, type: 2}
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
         type: 3}
       propertyPath: negate
@@ -44981,6 +45086,11 @@ PrefabInstance:
       propertyPath: fill
       value: 
       objectReference: {fileID: 2100000, guid: 9e794f294982a114ba446120ec045f2c, type: 2}
+    - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
+        type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
         type: 3}
       propertyPath: negate
@@ -47788,6 +47898,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -3.671
       objectReference: {fileID: 0}
+    - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
+        type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -52457,6 +52572,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
+        type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -52696,6 +52816,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
+        type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -52813,7 +52938,7 @@ PrefabInstance:
         type: 3}
       propertyPath: wire
       value: 
-      objectReference: {fileID: 2100000, guid: b57f1ee0bb6aa9b44831d575710a45f5, type: 2}
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     - target: {fileID: 6396846992203572632, guid: 90a26c631da0cd74d9875651fd43fe12,
         type: 3}
       propertyPath: negate
@@ -59723,7 +59848,7 @@ PrefabInstance:
         type: 3}
       propertyPath: wire
       value: 
-      objectReference: {fileID: 2100000, guid: b57f1ee0bb6aa9b44831d575710a45f5, type: 2}
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     - target: {fileID: 6396846992203572632, guid: 90a26c631da0cd74d9875651fd43fe12,
         type: 3}
       propertyPath: negate
@@ -60089,7 +60214,7 @@ PrefabInstance:
         type: 3}
       propertyPath: wire
       value: 
-      objectReference: {fileID: 2100000, guid: b57f1ee0bb6aa9b44831d575710a45f5, type: 2}
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     - target: {fileID: 6396846992203572632, guid: 90a26c631da0cd74d9875651fd43fe12,
         type: 3}
       propertyPath: negate
@@ -60753,6 +60878,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
+        type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -67336,6 +67466,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
+        type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 2100000, guid: c7229f38c540d4ed780a52a6762c90df, type: 2}
     - target: {fileID: 7874156790512549699, guid: a6e7602d14874a94da4cff37c67956f3,
         type: 3}
       propertyPath: negate
