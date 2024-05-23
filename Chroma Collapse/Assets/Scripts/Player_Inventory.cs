@@ -5,17 +5,23 @@ using UnityEngine;
 
 public class Player_Inventory : GLOBAL_color
 {
-    public static List<GameObject> inventory = new List<GameObject>();
-    public bool testing = false;
-    public GameObject ColorSwitcher;
-    public GameObject red_crystal;
-    public GameObject yellow_crystal;
-    public GameObject blue_crystal;
-    public GameObject gun;
-    static public bool inventory_changed = false;
+    protected static List<GameObject> inventory = new List<GameObject>();
 
-    //create grey door "key" that is activates after the player gets the color swticher.
-    static public bool grey_key = false;
+    [SerializeField]
+    private bool testing = false;
+    [SerializeField]
+    private GameObject ColorSwitcher;
+    [SerializeField]
+    private GameObject red_crystal;
+    [SerializeField]
+    private GameObject yellow_crystal;
+    [SerializeField]
+    private GameObject blue_crystal;
+    [SerializeField]
+    private GameObject gun;
+
+    // This boolean is switched on by item pickups which triggers UpdateUI
+    static protected bool inventory_changed = false;
 
     void Awake() {
 
@@ -37,12 +43,7 @@ public class Player_Inventory : GLOBAL_color
     // Start is called before the first frame update
     void Start()
     {
-        if (!testing) {
-            //set key to false on start
-            grey_key = false;
-
-            ColorSwitcher.SetActive(false);
-        }
+        
     }
 
     // Update is called once per frame
@@ -54,16 +55,12 @@ public class Player_Inventory : GLOBAL_color
         }
     }
 
-
-    void UpdateUI() {
+    protected void UpdateUI() {
         foreach (GameObject obj in inventory) {
 
             // Debug.Log("Updating UI... current game object: " + obj);
 
             if (obj == ColorSwitcher) {
-                //set grey key to active.
-                grey_key = true;
-
                 // sets the color switcher to active
 
                 ColorSwitcher.SetActive(true);
