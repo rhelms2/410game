@@ -11,6 +11,8 @@ public class moving_platform : MonoBehaviour
 
     [SerializeField]
     private float _speed;
+
+    private Transform old_parent;
     private int _target_index;
     private Transform _previousWaypoint;
     private Transform _targetWaypoint;
@@ -53,9 +55,10 @@ public class moving_platform : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
 
-        Debug.Log("Other collider " + other.tag + " has entered collider");
+        // Debug.Log("Other collider " + other.tag + " has entered collider");
 
         if (other.tag == "Player") {
+            old_parent = other.transform.parent.parent;
             other.transform.parent.SetParent(transform);
         }
         else if (other.tag == "Gravity Sensitive Object") {
@@ -65,10 +68,10 @@ public class moving_platform : MonoBehaviour
 
     private void OnTriggerExit(Collider other) {
 
-        Debug.Log("Other collider " + other.tag + " has exited collider");
+        // Debug.Log("Other collider " + other.tag + " has exited collider");
 
         if (other.tag == "Player") {
-            other.transform.parent.SetParent(null);
+            other.transform.parent.SetParent(old_parent);
         }
         else if (other.tag == "Gravity Sensitive Object") {
              other.transform.SetParent(null);

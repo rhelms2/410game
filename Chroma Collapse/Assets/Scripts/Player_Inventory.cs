@@ -5,20 +5,15 @@ using UnityEngine;
 
 public class Player_Inventory : GLOBAL_color
 {
-    protected static List<GameObject> inventory = new List<GameObject>();
+    protected static List<string> inventory = new List<string>();
 
-    [SerializeField]
-    private bool testing = false;
-    [SerializeField]
-    private GameObject ColorSwitcher;
-    [SerializeField]
-    private GameObject red_crystal;
-    [SerializeField]
-    private GameObject yellow_crystal;
-    [SerializeField]
-    private GameObject blue_crystal;
-    [SerializeField]
-    private GameObject gun;
+    [SerializeField] private bool testing = false;
+    [SerializeField] private string ColorSwitcher_tag;
+    [SerializeField] private string red_crystal_tag;
+    [SerializeField] private string yellow_crystal_tag;
+    [SerializeField] private string blue_crystal_tag;
+    [SerializeField] private string gun_tag;
+    [SerializeField] GameObject ColorSwitcher;  // Need this to set the object and its children active
 
     // This boolean is switched on by item pickups which triggers UpdateUI
     static protected bool inventory_changed = false;
@@ -27,10 +22,10 @@ public class Player_Inventory : GLOBAL_color
 
         // If testing the game, activate all inventory slots
         if (testing) {
-            inventory.Add(ColorSwitcher);
-            inventory.Add(red_crystal);
-            inventory.Add(yellow_crystal);
-            inventory.Add(blue_crystal);
+            inventory.Add(ColorSwitcher_tag);
+            inventory.Add(red_crystal_tag);
+            inventory.Add(yellow_crystal_tag);
+            inventory.Add(blue_crystal_tag);
             int i = 0;
             foreach (bool item in inventory_activation) {
                 inventory_activation[i] = true;
@@ -56,16 +51,16 @@ public class Player_Inventory : GLOBAL_color
     }
 
     protected void UpdateUI() {
-        foreach (GameObject obj in inventory) {
+        foreach (string tag in inventory) {
 
             // Debug.Log("Updating UI... current game object: " + obj);
 
-            if (obj == ColorSwitcher) {
+            if (tag == ColorSwitcher_tag) {
                 // sets the color switcher to active
 
                 ColorSwitcher.SetActive(true);
             }
-            else if (obj == red_crystal) {
+            else if (tag == red_crystal_tag) {
                 
                 // sets red spire active and allows control of red by the player
 
@@ -74,7 +69,7 @@ public class Player_Inventory : GLOBAL_color
                 inventory_activation[0] = true;
                 ColorSwitcher.transform.GetChild(1).GetChild(0).gameObject.GetComponent<block_collision_switcher>().enabled = true;
             }
-            else if (obj == yellow_crystal) {
+            else if (tag == yellow_crystal_tag) {
 
                 // sets yellow spire active and allows control of yellow by the player
                 
@@ -83,7 +78,7 @@ public class Player_Inventory : GLOBAL_color
                 inventory_activation[1] = true;
                 ColorSwitcher.transform.GetChild(2).GetChild(0).gameObject.GetComponent<block_collision_switcher>().enabled = true;
             }
-            else if (obj == blue_crystal) {
+            else if (tag == blue_crystal_tag) {
 
                 // sets blue spire active and allows control of blue by the player
 

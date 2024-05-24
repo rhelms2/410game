@@ -5,8 +5,7 @@ using UnityEngine.UIElements;
 
 public class Custom_Door : Player_Inventory
 {
-    [SerializeField]
-    private GameObject Door;
+    [SerializeField] private GameObject Door;
 
     // Start is called before the first frame update
     void Start()

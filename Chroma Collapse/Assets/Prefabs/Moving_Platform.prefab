@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3858271311705646946}
   - component: {fileID: 8233054704449075782}
   - component: {fileID: 8990676490925217007}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Moving_Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2834463326613520396}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.5, y: -1.3400002, z: 18.1}
   m_LocalScale: {x: 3.1236045, y: 0.6543351, z: 3.6671574}
   m_ConstrainProportionsScale: 0

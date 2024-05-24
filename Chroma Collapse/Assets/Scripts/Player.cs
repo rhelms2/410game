@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public static Player player_instance;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (player_instance != null) {
             Destroy(this.gameObject);
