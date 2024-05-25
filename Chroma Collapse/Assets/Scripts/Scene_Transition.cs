@@ -20,12 +20,12 @@ public class Scene_Transition : MonoBehaviour
     
     void OnTriggerEnter(Collider other) {
         if (other.tag == "Player") {
-            Debug.Log("Scene to load: " + SceneManager.GetSceneByName(scene_name));
+            // Debug.Log("Scene to load: " + SceneManager.GetSceneByName(scene_name));
             SceneManager.LoadSceneAsync(scene_name, LoadSceneMode.Single);
             // SceneManager.MoveGameObjectToScene(other.transform.root.gameObject, scene);
             // SceneManager.LoadSceneAsync(scene.name, LoadSceneMode.Single);
             other.transform.parent.position = spawn_position;
-            Debug.Log("Player transferred to new scene");
+            // Debug.Log("Player transferred to new scene");
         }
     }
     

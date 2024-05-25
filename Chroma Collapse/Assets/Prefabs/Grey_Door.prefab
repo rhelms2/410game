@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1358718270282020905}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5, y: 3.5, z: -50.5}
   m_LocalScale: {x: 5, y: 6, z: 0.23349999}
   m_ConstrainProportionsScale: 0
@@ -45,17 +45,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1358718270282020905}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4307517f98ae2a4086e2a29e5a9d695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger1: {fileID: 3421354999978452120}
-  trigger2: {fileID: 1991163521898584581}
   physicalDoor: {fileID: 4233579177250360683}
-  player: {fileID: 0}
-  moveDist: 10
-  mspeed: 1.5
+  trigger1: {fileID: 5300928494416653088}
+  trigger2: {fileID: 3961388701335120924}
+  moveDist: 3
+  mspeed: 0.4
 --- !u!114 &3702634495151294981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,11 +77,12 @@ MonoBehaviour:
   - {r: 1, g: 0, b: 1, a: 0}
   - {r: 1, g: 1, b: 1, a: 1}
   testing: 0
+  ColorSwitcher_tag: 
+  red_crystal_tag: 
+  yellow_crystal_tag: 
+  blue_crystal_tag: 
+  gun_tag: 
   ColorSwitcher: {fileID: 0}
-  red_crystal: {fileID: 0}
-  yellow_crystal: {fileID: 0}
-  blue_crystal: {fileID: 0}
-  gun: {fileID: 0}
   Door: {fileID: 1358718270282020905}
 --- !u!82 &4304295441420330272
 AudioSource:
@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 2275451694069080178}
   - component: {fileID: 279503173196933100}
   - component: {fileID: 643672003551344345}
+  - component: {fileID: 3961388701335120924}
   m_Layer: 0
   m_Name: d1trigger2
   m_TagString: Untagged
@@ -242,6 +243,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3961388701335120924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991163521898584581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fefff4a1e425bd245a8a43f8024180fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3421354999978452120
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,6 +266,7 @@ GameObject:
   - component: {fileID: 3056491842885901153}
   - component: {fileID: 7915792081989255154}
   - component: {fileID: 504029616950125353}
+  - component: {fileID: 5300928494416653088}
   m_Layer: 0
   m_Name: d1trigger1
   m_TagString: Untagged
@@ -304,6 +318,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5300928494416653088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3421354999978452120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fefff4a1e425bd245a8a43f8024180fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4233579177250360683
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,7 +683,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 25
+  m_VersionIndex: 28
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1003,7 +1029,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 25
+  m_VersionIndex: 28
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1349,7 +1375,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 25
+  m_VersionIndex: 28
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

@@ -197,23 +197,11 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 20968226}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &21838422 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9200950653101611660, guid: 000237163984fd9499aab9b70e7e4a4a,
-    type: 3}
-  m_PrefabInstance: {fileID: 5026120730349658474}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &21838423 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1005161289595093179, guid: 000237163984fd9499aab9b70e7e4a4a,
     type: 3}
   m_PrefabInstance: {fileID: 5026120730349658474}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &26130726 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3109865834830364820, guid: b55a43421ad724040be7270761cb9bd1,
-    type: 3}
-  m_PrefabInstance: {fileID: 6983379253269975827}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &26130727 stripped
 Transform:
@@ -1288,24 +1276,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fefff4a1e425bd245a8a43f8024180fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &675363730 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3618879160010561933, guid: 536cd2e1f5cade64aa3bb3dfc05acf74,
-    type: 3}
-  m_PrefabInstance: {fileID: 803627649}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &675363733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 675363730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56f6da0ac504f5749953885ba875c217, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &687927635
 GameObject:
   m_ObjectHideFlags: 0
@@ -1875,69 +1845,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7695666354555158072, guid: 536cd2e1f5cade64aa3bb3dfc05acf74,
-        type: 3}
-      propertyPath: gun_tag
-      value: Gun Pickup
-      objectReference: {fileID: 0}
-    - target: {fileID: 7695666354555158072, guid: 536cd2e1f5cade64aa3bb3dfc05acf74,
-        type: 3}
-      propertyPath: testing
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7695666354555158072, guid: 536cd2e1f5cade64aa3bb3dfc05acf74,
-        type: 3}
-      propertyPath: red_crystal
-      value: 
-      objectReference: {fileID: 26130726}
-    - target: {fileID: 7695666354555158072, guid: 536cd2e1f5cade64aa3bb3dfc05acf74,
-        type: 3}
-      propertyPath: blue_crystal
-      value: 
-      objectReference: {fileID: 1726431874}
-    - target: {fileID: 7695666354555158072, guid: 536cd2e1f5cade64aa3bb3dfc05acf74,
-        type: 3}
-      propertyPath: yellow_crystal
-      value: 
-      objectReference: {fileID: 21838422}
-    - target: {fileID: 7695666354555158072, guid: 536cd2e1f5cade64aa3bb3dfc05acf74,
-        type: 3}
-      propertyPath: red_crystal_tag
-      value: Red Chip Pickup
-      objectReference: {fileID: 0}
-    - target: {fileID: 7695666354555158072, guid: 536cd2e1f5cade64aa3bb3dfc05acf74,
-        type: 3}
-      propertyPath: blue_crystal_tag
-      value: Blue Chip Pickup
-      objectReference: {fileID: 0}
-    - target: {fileID: 7695666354555158072, guid: 536cd2e1f5cade64aa3bb3dfc05acf74,
-        type: 3}
-      propertyPath: ColorSwitcher_tag
-      value: ColorSwitcher Pickup
-      objectReference: {fileID: 0}
-    - target: {fileID: 7695666354555158072, guid: 536cd2e1f5cade64aa3bb3dfc05acf74,
-        type: 3}
-      propertyPath: yellow_crystal_tag
-      value: Yellow Chip Pickup
-      objectReference: {fileID: 0}
-    - target: {fileID: 8366844288889574490, guid: 536cd2e1f5cade64aa3bb3dfc05acf74,
-        type: 3}
-      propertyPath: sensX
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 8366844288889574490, guid: 536cd2e1f5cade64aa3bb3dfc05acf74,
-        type: 3}
-      propertyPath: sensY
-      value: 300
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3618879160010561933, guid: 536cd2e1f5cade64aa3bb3dfc05acf74,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 675363733}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 536cd2e1f5cade64aa3bb3dfc05acf74, type: 3}
 --- !u!1 &840631867
 GameObject:
@@ -2782,7 +2693,6 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1647700539}
   - {fileID: 940133222}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3364,90 +3274,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1634526683}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1647700538
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1295305316}
-    m_Modifications:
-    - target: {fileID: 663933830333433475, guid: 2b108aeca778c4a489671bb16becd81e,
-        type: 3}
-      propertyPath: m_Name
-      value: ColorSwitcher Pickup
-      objectReference: {fileID: 0}
-    - target: {fileID: 5259555142448105701, guid: 2b108aeca778c4a489671bb16becd81e,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.025005398
-      objectReference: {fileID: 0}
-    - target: {fileID: 5259555142448105701, guid: 2b108aeca778c4a489671bb16becd81e,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.19965519
-      objectReference: {fileID: 0}
-    - target: {fileID: 5259555142448105701, guid: 2b108aeca778c4a489671bb16becd81e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 20.388334
-      objectReference: {fileID: 0}
-    - target: {fileID: 5259555142448105701, guid: 2b108aeca778c4a489671bb16becd81e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.15349999
-      objectReference: {fileID: 0}
-    - target: {fileID: 5259555142448105701, guid: 2b108aeca778c4a489671bb16becd81e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.2045803
-      objectReference: {fileID: 0}
-    - target: {fileID: 5259555142448105701, guid: 2b108aeca778c4a489671bb16becd81e,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9999692
-      objectReference: {fileID: 0}
-    - target: {fileID: 5259555142448105701, guid: 2b108aeca778c4a489671bb16becd81e,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.007853894
-      objectReference: {fileID: 0}
-    - target: {fileID: 5259555142448105701, guid: 2b108aeca778c4a489671bb16becd81e,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5259555142448105701, guid: 2b108aeca778c4a489671bb16becd81e,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5259555142448105701, guid: 2b108aeca778c4a489671bb16becd81e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5259555142448105701, guid: 2b108aeca778c4a489671bb16becd81e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5259555142448105701, guid: 2b108aeca778c4a489671bb16becd81e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2b108aeca778c4a489671bb16becd81e, type: 3}
---- !u!4 &1647700539 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5259555142448105701, guid: 2b108aeca778c4a489671bb16becd81e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1647700538}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1680630706
 GameObject:
   m_ObjectHideFlags: 0
@@ -3741,12 +3567,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 659416727}
   m_SourcePrefab: {fileID: 100100000, guid: 628e64cb6bfe2524cadd2a2cc8a71ce7, type: 3}
---- !u!1 &1726431874 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7059140887872068229, guid: 4b780938ece18ea40a946d0be8c73956,
-    type: 3}
-  m_PrefabInstance: {fileID: 7803338515042787452}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1726431875 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2723539654414683175, guid: 4b780938ece18ea40a946d0be8c73956,

@@ -8,12 +8,11 @@ public class Player_Inventory : GLOBAL_color
     protected static List<string> inventory = new List<string>();
 
     [SerializeField] private bool testing = false;
-    [SerializeField] private string ColorSwitcher_tag;
-    [SerializeField] private string red_crystal_tag;
-    [SerializeField] private string yellow_crystal_tag;
-    [SerializeField] private string blue_crystal_tag;
-    [SerializeField] private string gun_tag;
-    [SerializeField] GameObject ColorSwitcher;  // Need this to set the object and its children active
+    private string ColorSwitcher_tag = "ColorSwitcher Pickup";
+    private string red_crystal_tag = "Red Chip Pickup";
+    private string yellow_crystal_tag = "Yellow Chip Pickup";
+    private string blue_crystal_tag = "Blue Chip Pickup";
+    private string gun_tag;
 
     // This boolean is switched on by item pickups which triggers UpdateUI
     static protected bool inventory_changed = false;
@@ -45,19 +44,24 @@ public class Player_Inventory : GLOBAL_color
     void Update()
     {
         if (inventory_changed) {
+            // Debug.Log("INVENTORY CHANGED");
             UpdateUI();
             inventory_changed = false;
         }
     }
 
     protected void UpdateUI() {
+
+        GameObject ColorSwitcher = GameObject.FindWithTag("ColorSwitcher UI Object").transform.GetChild(1).gameObject;
+
         foreach (string tag in inventory) {
 
-            // Debug.Log("Updating UI... current game object: " + obj);
+            // Debug.Log("UpdateUI: Inventory tag: " + tag);
+            // Debug.Log("ColorSwitcher tag: " + ColorSwitcher_tag);
 
             if (tag == ColorSwitcher_tag) {
                 // sets the color switcher to active
-
+                // Debug.Log("Color switcher location: " + ColorSwitcher);
                 ColorSwitcher.SetActive(true);
             }
             else if (tag == red_crystal_tag) {
