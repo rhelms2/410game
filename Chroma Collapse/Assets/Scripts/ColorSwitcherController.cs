@@ -15,6 +15,8 @@ public class ColorSwitcherRotation : GLOBAL_color
     int target_rotation = 120;    // Keeps track of where the controller needs to be rotated towards. Always rotates by 120 degrees
     int actual_rotation = 0;    // Keeps track of the progress towards target_rotation
     public int rotation_speed = 20;      // This is how much the controller will rotate per frame
+    public AudioSource color_audio;
+    public AudioSource rotate_audio;
 
     // Start is called before the first frame update
     void Start()
@@ -61,6 +63,7 @@ public class ColorSwitcherRotation : GLOBAL_color
 
             if (changed)
             {
+                color_audio.Play();
                 Changecolor();
                 changed = false;
             }
@@ -127,11 +130,11 @@ public class ColorSwitcherRotation : GLOBAL_color
     {
         if (!rotating)
         {
-            Debug.Log(spire);
+            // Debug.Log(spire);
             spire += 1 + 1 * Convert.ToInt32(counterclockwise);
-            Debug.Log(spire);
+            // Debug.Log(spire);
             spire %= 3;
-            Debug.Log(spire);
+            // Debug.Log(spire);
             actual_rotation = 0;
             rotating = true;
             if (counterclockwise)

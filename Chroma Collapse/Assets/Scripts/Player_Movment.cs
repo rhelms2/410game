@@ -9,6 +9,7 @@ public class Player_Movment : MonoBehaviour
 
     //set jump input
     public KeyCode jumpKey = KeyCode.Space;
+    private bool landing_audio_played = true;      // Used to cue sound effect on landing
 
     //set shoot input
     public KeyCode shoot = KeyCode.Mouse0;
@@ -42,6 +43,7 @@ public class Player_Movment : MonoBehaviour
 
     //for footsteps
     public AudioSource footsteps;
+    public AudioSource jump_landing;
     bool walking;
 
     // Start is called before the first frame update
@@ -123,6 +125,8 @@ public class Player_Movment : MonoBehaviour
     void Jump()
     {
         grounded = false;
+        landing_audio_played = false;
+
         //reset y velocity to make jump height more consistent.
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
@@ -162,6 +166,11 @@ public class Player_Movment : MonoBehaviour
     {
         //perform raycast from player object with distance of half its height plus some extra (0.2f) to whatever ground is in this context.
         grounded = Physics.Raycast(transform.position, Vector3.down, height * 0.5f + 0.2f, groundTarget);
+
+        if (!landing_audio_played && grounded) {
+            jump_landing.Play();
+            landing_audio_played = true;
+        }
 
         //invoke functions
         KeyboardInput();

@@ -6,6 +6,12 @@ TagManager:
   tags:
   - red
   - Door
+  - Gravity Sensitive Object
+  - ColorSwitcher Pickup
+  - Red Chip Pickup
+  - Yellow Chip Pickup
+  - Blue Chip Pickup
+  - ColorSwitcher UI Object
   layers:
   - Default
   - TransparentFX
