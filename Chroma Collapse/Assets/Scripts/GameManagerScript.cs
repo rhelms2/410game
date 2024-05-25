@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManagerScript : Player_Inventory
 {
     private static GameManagerScript instance;
-    public GameObject player;
+    private GameObject player;
     public Transform respawn_point;
 
     //from https://www.youtube.com/watch?v=pKFtyaAPzYo
@@ -16,6 +16,7 @@ public class GameManagerScript : Player_Inventory
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindWithTag("Player").transform.parent.gameObject;
         gameOverUI.SetActive(false);   
     }
 
@@ -28,6 +29,7 @@ public class GameManagerScript : Player_Inventory
     public void GameOver()
     {
         gameOverUI.SetActive(true);
+        Restart();
     }
 
     public void Restart()

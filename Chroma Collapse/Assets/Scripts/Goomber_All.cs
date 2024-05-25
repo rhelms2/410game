@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Goomber_All : GLOBAL_playerhealth
 {
-    public GameObject player;
+    private GameObject player;
     //https://www.youtube.com/watch?v=BGe5HDsyhkY
     float x, y, z, counter, angle, activeX, activeZ;
     Vector3 origVect;
@@ -22,6 +22,7 @@ public class Goomber_All : GLOBAL_playerhealth
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindWithTag("Player");
         counter = 0;
         origVect = transform.position;
         activeX = origVect.x;

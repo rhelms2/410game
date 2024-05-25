@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7615656497205750711}
   m_Layer: 0
   m_Name: ColorSwitcher3d
-  m_TagString: Untagged
+  m_TagString: ColorSwitcher UI Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -666,12 +666,6 @@ MonoBehaviour:
   - {r: 1, g: 0, b: 1, a: 0}
   - {r: 1, g: 1, b: 1, a: 1}
   testing: 1
-  ColorSwitcher_tag: ColorSwitcher Pickup
-  red_crystal_tag: Red Chip Pickup
-  yellow_crystal_tag: Yellow Chip Pickup
-  blue_crystal_tag: Blue Chip Pickup
-  gun_tag: Gun Pickup
-  ColorSwitcher: {fileID: 4499506964831523928}
 --- !u!1 &3618879160010561933
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,12 +726,6 @@ MonoBehaviour:
   - {r: 1, g: 0, b: 1, a: 0}
   - {r: 1, g: 1, b: 1, a: 1}
   testing: 0
-  ColorSwitcher_tag: 
-  red_crystal_tag: 
-  yellow_crystal_tag: 
-  blue_crystal_tag: 
-  gun_tag: 
-  ColorSwitcher: {fileID: 0}
   zoosmellPooplord: 1
 --- !u!114 &8130159326300439833
 MonoBehaviour:

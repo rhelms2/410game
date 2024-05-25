@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Zorb_All : GLOBAL_playerhealth
 {
-    public GameObject player;
+    private GameObject player;
     public GameObject walls;
     //https://www.youtube.com/watch?v=BGe5HDsyhkY
     float x, y, z, counter, angle, activeX, activeZ;
@@ -24,6 +24,7 @@ public class Zorb_All : GLOBAL_playerhealth
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindWithTag("Player");
         counter = 0;
         origVect = transform.position;
         activeX = origVect.x;
