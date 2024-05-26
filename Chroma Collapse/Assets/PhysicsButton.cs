@@ -11,6 +11,7 @@ public class PhysicsButton : MonoBehaviour
     private GameObject ball;
     private Vector3 delta_position = new Vector3(0f, 0.05f, 0f);
     private Vector3 lastPosition;
+    private Vector3 ballSpeedVector;
     private float ballSpeed;
     private float time_passed = 0;
     private bool pressed = false;
@@ -19,6 +20,7 @@ public class PhysicsButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        lastPosition = ballSpawner.transform.position;
     }
 
     void Update()
@@ -36,14 +38,34 @@ public class PhysicsButton : MonoBehaviour
             }
 
         }
-        if (active)
+        
+    }
+
+    IEnumerator ballCheck()
+    {
+        while (active)
         {
-            ballSpeed = Vector3.Distance(ball.transform.position, lastPosition);
+            Debug.Log("Coroutine started");
+            lastPosition = ball.transform.position;
+            yield return new WaitForEndOfFrame();
+            Debug.Log("After WaitForEndOfFrame");
+
+            Debug.Log("Current Position: " + ball.transform.position);
+            Debug.Log("Last Position: " + lastPosition);
+
+            ballSpeedVector = (ball.transform.position - lastPosition) / Time.deltaTime;
+            ballSpeed = ballSpeedVector.magnitude;
+            Debug.Log("Ball Speed: " + ballSpeed);
+
             if (Mathf.Approximately(ballSpeed, 0f) && ball.transform.localPosition.y < -18.5f)
             {
+                Debug.Log("Destroying Ball");
                 Destroy(ball, 0f);
                 active = false;
+                lastPosition = ballSpawner.transform.position;
             }
+
+            yield return null; // Ensure the coroutine runs continuously
         }
     }
 
@@ -63,6 +85,7 @@ public class PhysicsButton : MonoBehaviour
                     ball.transform.parent = ballSpawner.transform;
                     lastPosition = ball.transform.position;
                     active = true;
+                    StartCoroutine(ballCheck());
                 }
                 
             }
