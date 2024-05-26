@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class door_vertical : MonoBehaviour
 {
-    public GameObject trigger1;
-    public GameObject trigger2;
     public GameObject physicalDoor;
-    public GameObject player;
+    public door_trigger trigger1;
+    public door_trigger trigger2;
     int currTrigger = 0; //0 - closed, 1 - open with trigger1, 2 - opened with trigger2
     public int moveDist = 10;
-    public float mspeed = 0.25f;
+    public float mspeed = 0.20f;
     float originY;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +20,12 @@ public class door_vertical : MonoBehaviour
 
     IEnumerator moveDoor(int dir){
         float accu = 0;
-        float bound = dir * moveDist;
-        while (accu < bound){
+        float bound = moveDist;
+        Vector3 movement_amount = new Vector3 (0, mspeed * dir, 0);
+
+        while (accu < bound) {
             accu += mspeed; //linear for now
-            physicalDoor.transform.position += new Vector3(0, mspeed, 0);
+            physicalDoor.transform.position += movement_amount;
             yield return null;
         }
     }
@@ -31,25 +33,31 @@ public class door_vertical : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if (Vector3.Distance(player.transform.position, trigger1.transform.position) < 2f){
+        if (trigger1.get_state()) {
             if (currTrigger == 0) {
                 currTrigger = 1;
+                gameObject.GetComponent<AudioSource>().Play(0);
                 StartCoroutine(moveDoor(1));
             }
             else if (currTrigger == 2) {
                 currTrigger = 0;
+                gameObject.GetComponent<AudioSource>().Play(0);
                 StartCoroutine(moveDoor(-1));
             }
-       } 
-       else if (Vector3.Distance(player.transform.position, trigger2.transform.position) < 2f){
+            trigger1.set_state(false);
+        }
+        else if (trigger2.get_state()) {
             if (currTrigger == 0){
                 currTrigger = 2;
+                gameObject.GetComponent<AudioSource>().Play(0);
                 StartCoroutine(moveDoor(1));
             }
             else if (currTrigger == 1){
                 currTrigger = 0;
+                gameObject.GetComponent<AudioSource>().Play(0);
                 StartCoroutine(moveDoor(-1));
             }
-       }
+            trigger2.set_state(false);
+        }
     }
 }

@@ -2,34 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 public class Item_Pickup : Player_Inventory
 {
-    public GameObject player;
-    public GameObject item;
-    public float pickup_distance;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    [SerializeField] GameObject item;
+
+    [SerializeField] AudioSource pickup_noise;
+
+    void Awake() {
+        if (gameObject != null) { 
+            foreach (string tag in inventory) {
+                if (tag == gameObject.tag) {
+                    gameObject.SetActive(false);
+                    Destroy(gameObject);
+                }
+            }
+        }
+        else {
+            return;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if ((player.transform.position.x <= gameObject.transform.position.x + pickup_distance) && 
-                (player.transform.position.x >= gameObject.transform.position.x - pickup_distance) &&
-                (player.transform.position.z <= gameObject.transform.position.z + pickup_distance) && 
-                (player.transform.position.z >= gameObject.transform.position.z - pickup_distance)) {
+    void OnTriggerEnter(Collider other) {
+        if (other.tag == "Player") {
 
-            inventory.Add(item);
+            inventory.Add(item.tag);
             inventory_changed = true;
+            pickup_noise.Play();
 
-            Debug.Log("Adding item to player inventory. Item: " + inventory.Last());
+            // Debug.Log("Adding item to player inventory. Item: " + inventory.Last());
 
             gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 }

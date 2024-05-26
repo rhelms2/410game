@@ -9,6 +9,7 @@ public class GLOBAL_playerhealth : Player_Inventory
     public static bool hit_cooldown = false;
     bool invoke_active = false;
     public float zoosmellPooplord = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +31,7 @@ public class GLOBAL_playerhealth : Player_Inventory
         else if (current_health > 3) current_health = 3;
         if (hit_cooldown == true) //now we are immune for a bit
         {
-            if (invoke_active == false){
+            if (invoke_active == false) {
                 current_health--;
                 Invoke(nameof(CooldownReset), zoosmellPooplord);
                 invoke_active = true;

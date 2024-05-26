@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class GLOBAL_color : MonoBehaviour
 {
+    private static UnityEngine.Color orange = new Color(1.0f, 0.5f, 0, 0);
+    private static UnityEngine.Color purple = new Color(1.0f, 0, 1.0f, 0);
+
     // This table keeps track of if the player has access to these colors on the color switcher
     public static bool[] inventory_activation = {
         false,   // red
@@ -36,9 +39,9 @@ public class GLOBAL_color : MonoBehaviour
         Color.red,
         Color.yellow,
         Color.blue,
-        new Color(1.0f, 0.5f, 0, 0),    // orange
+        orange,    // orange
         Color.green,                    // green
-        new Color(1.0f, 0, 1.0f, 0),    // purple
+        purple,    // purple
         Color.white
     };
 
