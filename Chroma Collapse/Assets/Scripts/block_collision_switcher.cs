@@ -117,7 +117,11 @@ public class block_collision_switcher : GLOBAL_color
             }
         }
 
-        obj.GetComponent<Renderer>().material.color = color_array[trigger_color];
+        if (!(trigger_color == 4 || trigger_color == 6))
+        {
+            obj.GetComponent<Renderer>().material.color = color_array[trigger_color];
+        }
+        
         // Debug.Log("Material is " + obj.GetComponent<Renderer>().material);
     }
 

@@ -33,7 +33,6 @@ public class ShotBehavior : ColorSwitcherRotation
         collisionExplosion.GetComponent<Renderer>().sharedMaterial.SetColor("_EmissionColor", color_array[color]);
         collisionExplosion.GetComponent<Renderer>().sharedMaterial.SetColor("_Color", color_array[color]);
         collisionExplosion.GetComponent<ParticleSystem>().startColor = color_array[color];
-        //self.GetComponent<Light>().color = Color.blue;
 
     }
 

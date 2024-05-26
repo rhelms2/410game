@@ -12,6 +12,7 @@ TagManager:
   - Yellow Chip Pickup
   - Blue Chip Pickup
   - ColorSwitcher UI Object
+  - Bullet
   layers:
   - Default
   - TransparentFX

@@ -8,6 +8,7 @@ public class RayGun : MonoBehaviour
 
     public GameObject m_shotPrefab;
     public GameObject gun;
+    public AudioSource shootSound;
 
     RaycastHit hit;
     float range = 1000.0f;
@@ -20,6 +21,7 @@ public class RayGun : MonoBehaviour
     private float targetRecoil_x = 0f;
     private bool recoiling = false;
     private bool recovering = false;
+   
 
     void Update()
     {
@@ -29,6 +31,7 @@ public class RayGun : MonoBehaviour
             if (Time.time > m_shootRateTimeStamp)
             {
                 ShootRay();
+                shootSound.Play();
                 m_shootRateTimeStamp = Time.time + shootRate;
                 ApplyRecoil();
             }

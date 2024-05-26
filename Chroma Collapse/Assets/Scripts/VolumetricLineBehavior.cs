@@ -392,8 +392,6 @@ namespace VolumetricLines
 			}
 			m_lineColor = color_array[color];
 			m_material.color = color_array[color];
-			Debug.Log(color_array[color]);
-			Debug.Log(m_lineColor);
 		}
 
 		void OnValidate()
