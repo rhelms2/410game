@@ -43,7 +43,7 @@ public class RayGun : MonoBehaviour
 
     void ShootRay()
     {
-        Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
+        Ray ray = playerCamera.ScreenPointToRay(new Vector3(160, 120));
         if (Physics.Raycast(ray, out hit, range))
         {
             GameObject laser = Instantiate(m_shotPrefab, playerObject.transform.position, playerObject.transform.rotation);
