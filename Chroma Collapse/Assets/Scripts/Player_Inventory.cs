@@ -13,6 +13,10 @@ public class Player_Inventory : GLOBAL_color
     private string yellow_crystal_tag = "Yellow Chip Pickup";
     private string blue_crystal_tag = "Blue Chip Pickup";
     private string gun_tag = "Gun Pickup";
+    private string red_gun_chip = "Red Gun Chip";
+    private string yellow_gun_chip = "Yellow Gun Chip";
+    private string blue_gun_chip = "Blue Gun Chip";
+    private string key_card = "Key Card";
 
     // This boolean is switched on by item pickups which triggers UpdateUI
     static protected bool inventory_changed = false;
@@ -25,11 +29,25 @@ public class Player_Inventory : GLOBAL_color
             inventory.Add(red_crystal_tag);
             inventory.Add(yellow_crystal_tag);
             inventory.Add(blue_crystal_tag);
+            /* 
+            inventory.Add(gun_tag);
+            inventory.Add(red_gun_chip);
+            inventory.Add(yellow_gun_chip);
+            inventory.Add(blue_gun_chip);
+            inventory.Add(key_card);
+            
             int i = 0;
+            
             foreach (bool item in inventory_activation) {
                 inventory_activation[i] = true;
                 i++;
             }
+            */
+
+            for (int j = 0; j < 3; j++) {
+                inventory_activation[j] = true;
+            }
+
             UpdateUI();
         }
     }
@@ -56,7 +74,7 @@ public class Player_Inventory : GLOBAL_color
 
         foreach (string tag in inventory) {
 
-            // Debug.Log("UpdateUI: Inventory tag: " + tag);
+            Debug.Log("UpdateUI: Inventory tag: " + tag);
             // Debug.Log("ColorSwitcher tag: " + ColorSwitcher_tag);
 
             if (tag == ColorSwitcher_tag) {
@@ -92,7 +110,16 @@ public class Player_Inventory : GLOBAL_color
                 ColorSwitcher.transform.GetChild(3).GetChild(0).gameObject.GetComponent<block_collision_switcher>().enabled = true;
             }
             else if (tag == gun_tag) {
-                ColorSwitcher.transform.parent.GetChild(2).gameObject.SetActive(true);
+                ColorSwitcher.transform.parent.GetChild(2).gameObject.SetActive(true);  // Gun location
+            }
+            else if (tag == red_gun_chip) {
+                inventory_activation[3] = true;
+            }
+            else if (tag == yellow_gun_chip) {
+                inventory_activation[4] = true;
+            }
+            else if (tag == blue_gun_chip) {
+                inventory_activation[5] = true;
             }
         }
 
