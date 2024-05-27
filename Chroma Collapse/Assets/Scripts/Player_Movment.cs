@@ -167,10 +167,12 @@ public class Player_Movment : MonoBehaviour
         //perform raycast from player object with distance of half its height plus some extra (0.2f) to whatever ground is in this context.
         grounded = Physics.Raycast(transform.position, Vector3.down, height * 0.5f + 0.2f, groundTarget);
 
-        if (!landing_audio_played && grounded) {
-            jump_landing.Play();
-            landing_audio_played = true;
-        }
+        //these mess with jumping somehow, and I can't fix the issue at this moment
+
+        //if (!landing_audio_played && grounded) {
+        //    jump_landing.Play();
+        //    landing_audio_played = true;
+        //}
 
         //invoke functions
         KeyboardInput();
