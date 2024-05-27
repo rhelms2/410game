@@ -24,7 +24,12 @@ public class RayGun : MonoBehaviour
     private float targetRecoil_x = 0f;
     private bool recoiling = false;
     private bool recovering = false;
-   
+    private float initialRecoil_x;
+
+    void Start()
+    {
+        initialRecoil_x = gun.transform.rotation.eulerAngles.x;
+    }
 
     void Update()
     {
@@ -43,7 +48,7 @@ public class RayGun : MonoBehaviour
 
     void ShootRay()
     {
-        Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
+        Ray ray = playerCamera.ScreenPointToRay(new Vector3(160, 120));
         if (Physics.Raycast(ray, out hit, range))
         {
             GameObject laser = Instantiate(m_shotPrefab, playerObject.transform.position, playerObject.transform.rotation);
@@ -65,7 +70,13 @@ public class RayGun : MonoBehaviour
         {
             // Apply recoil
             currentRecoil_x = Mathf.Lerp(currentRecoil_x, targetRecoil_x, 0.5f);
-            gun.transform.localRotation = Quaternion.Euler(currentRecoil_x, 0f, 0f);
+
+            // Get the current rotation in Euler angles
+            Vector3 currentEulerAngles = gun.transform.localRotation.eulerAngles;
+
+            // Set the x component based on the initial x angle and current recoil
+            currentEulerAngles.x = initialRecoil_x + currentRecoil_x;
+            gun.transform.localRotation = Quaternion.Euler(currentEulerAngles);
 
             if (Mathf.Abs(currentRecoil_x - targetRecoil_x) < 1f)
             {
@@ -78,7 +89,13 @@ public class RayGun : MonoBehaviour
         {
             // Recover recoil
             currentRecoil_x = Mathf.Lerp(currentRecoil_x, 0f, recoverySpeed * Time.deltaTime);
-            gun.transform.localRotation = Quaternion.Euler(currentRecoil_x, 0f, 0f);
+
+            // Get the current rotation in Euler angles
+            Vector3 currentEulerAngles = gun.transform.localRotation.eulerAngles;
+
+            // Set the x component based on the initial x angle and current recoil
+            currentEulerAngles.x = initialRecoil_x + currentRecoil_x;
+            gun.transform.localRotation = Quaternion.Euler(currentEulerAngles);
 
             if (Mathf.Approximately(currentRecoil_x, 0f))
             {

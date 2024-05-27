@@ -470,8 +470,8 @@ Mesh:
       m_BitSize: 0
     m_UVInfo: 0
   m_LocalAABB:
-    m_Center: {x: 0, y: 0, z: 24.999996}
-    m_Extent: {x: 33.70435, y: 33.70435, z: 58.704346}
+    m_Center: {x: 0, y: 0, z: 25}
+    m_Extent: {x: 202.22612, y: 202.22612, z: 227.22612}
   m_MeshUsageFlags: 0
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
@@ -644,7 +644,7 @@ Material:
     - _DstBlend: 0
     - _Glossiness: 0.5
     - _LightSaberFactor: 1
-    - _LineScale: 0.011335243
+    - _LineScale: 0.06801166
     - _LineWidth: 100
     - _Metallic: 0
     - _Mode: 0
