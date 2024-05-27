@@ -9,6 +9,11 @@ public class goomSprite : MonoBehaviour
         myY = transform.position.y;
         anim.Play("goombidle");
     }
+    void OnTriggerEnter(Collider other) {
+        if (other.tag == "Bullet") {
+            Debug.Log("i've been shot");
+        }
+    }
     void Update(){
         //transform.position = follow.transform.position;
         transform.position = new Vector3(follow.transform.position.x, myY, follow.transform.position.z);
