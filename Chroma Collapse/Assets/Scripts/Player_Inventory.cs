@@ -12,7 +12,7 @@ public class Player_Inventory : GLOBAL_color
     private string red_crystal_tag = "Red Chip Pickup";
     private string yellow_crystal_tag = "Yellow Chip Pickup";
     private string blue_crystal_tag = "Blue Chip Pickup";
-    private string gun_tag;
+    private string gun_tag = "Gun Pickup";
 
     // This boolean is switched on by item pickups which triggers UpdateUI
     static protected bool inventory_changed = false;
@@ -90,6 +90,9 @@ public class Player_Inventory : GLOBAL_color
                 ColorSwitcher.transform.gameObject.GetComponent<ColorSwitcherRotation>().enabled = true;
                 inventory_activation[2] = true;
                 ColorSwitcher.transform.GetChild(3).GetChild(0).gameObject.GetComponent<block_collision_switcher>().enabled = true;
+            }
+            else if (tag == gun_tag) {
+                ColorSwitcher.transform.parent.GetChild(2).gameObject.SetActive(true);
             }
         }
 

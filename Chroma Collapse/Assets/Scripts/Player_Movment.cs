@@ -11,6 +11,9 @@ public class Player_Movment : MonoBehaviour
     public KeyCode jumpKey = KeyCode.Space;
     private bool landing_audio_played = true;      // Used to cue sound effect on landing
 
+    //set shoot input
+    public KeyCode shoot = KeyCode.Mouse0;
+
     //variables to be used by the movement script
     public float moveSpeed;
     public Transform orientation;
@@ -79,6 +82,12 @@ public class Player_Movment : MonoBehaviour
 
             //grounded = false;
         }
+
+        if (Input.GetKeyDown(shoot))
+        {
+            Shoot();
+        }
+
         if ((horizontalInput != 0 || verticalInput != 0) && grounded)
         {
             if (!walking)
@@ -125,6 +134,11 @@ public class Player_Movment : MonoBehaviour
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
 
         grounded = false;
+    }
+
+    private void Shoot()
+    {
+        Debug.Log("shoot!");
     }
 
     //called after jump to reset jumpStatus
