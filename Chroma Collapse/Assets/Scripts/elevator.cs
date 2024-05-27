@@ -45,7 +45,7 @@ public class elevator : GLOBAL_color
         transform.position = Vector3.Lerp(_previousWaypoint.position, _targetWaypoint.position, elapsedPercentage);
         transform.rotation = Quaternion.Lerp(_previousWaypoint.rotation, _targetWaypoint.rotation, elapsedPercentage);
 
-        if (elapsedPercentage >= 1) {
+        if (elapsedPercentage >= 1 && color == up_color) {
             TargetNextWaypoint();
         }
     }
