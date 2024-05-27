@@ -9,6 +9,9 @@ public class RayGun : MonoBehaviour
     public GameObject m_shotPrefab;
     public GameObject gun;
     public AudioSource shootSound;
+    public Camera playerCamera;
+
+    public GameObject playerObject;
 
     RaycastHit hit;
     float range = 1000.0f;
@@ -40,10 +43,10 @@ public class RayGun : MonoBehaviour
 
     void ShootRay()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, range))
         {
-            GameObject laser = Instantiate(m_shotPrefab, transform.position, transform.rotation);
+            GameObject laser = Instantiate(m_shotPrefab, playerObject.transform.position, playerObject.transform.rotation);
             laser.GetComponent<ShotBehavior>().setTarget(hit.point);
             Destroy(laser, 2f);
         }
