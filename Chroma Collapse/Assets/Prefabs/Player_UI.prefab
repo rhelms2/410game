@@ -1708,7 +1708,7 @@ MonoBehaviour:
   rb: {fileID: 3466572801019512740}
   fill: {fileID: 2100000, guid: 90c3adc8f462d3a4382c46c52665cef8, type: 2}
   transparent: {fileID: 2100000, guid: 90c3adc8f462d3a4382c46c52665cef8, type: 2}
-  wire: {fileID: 2100000, guid: 4e81133be634a024fbe09b6311d030a5, type: 2}
+  wire: {fileID: 2100000, guid: 7154c1074feb743769a0eaefee5deefe, type: 2}
   obj: {fileID: 8190520763799499136}
 --- !u!1001 &3678788670410661980
 PrefabInstance:
@@ -1906,7 +1906,7 @@ MonoBehaviour:
   rb: {fileID: 241576796593819674}
   fill: {fileID: 2100000, guid: 90c3adc8f462d3a4382c46c52665cef8, type: 2}
   transparent: {fileID: 2100000, guid: 90c3adc8f462d3a4382c46c52665cef8, type: 2}
-  wire: {fileID: 2100000, guid: 7b1b3980d41b3ab4a86c1d702465642c, type: 2}
+  wire: {fileID: 2100000, guid: 7154c1074feb743769a0eaefee5deefe, type: 2}
   obj: {fileID: 4774111357842843092}
 --- !u!54 &241576796593819674
 Rigidbody:
@@ -2234,7 +2234,7 @@ MonoBehaviour:
   rb: {fileID: 4355666339160322401}
   fill: {fileID: 2100000, guid: 90c3adc8f462d3a4382c46c52665cef8, type: 2}
   transparent: {fileID: 2100000, guid: 90c3adc8f462d3a4382c46c52665cef8, type: 2}
-  wire: {fileID: 2100000, guid: 10b720616c2a1c24f9e439e4ddc58d3a, type: 2}
+  wire: {fileID: 2100000, guid: 7154c1074feb743769a0eaefee5deefe, type: 2}
   obj: {fileID: 1215816353918799057}
 --- !u!54 &4355666339160322401
 Rigidbody:
