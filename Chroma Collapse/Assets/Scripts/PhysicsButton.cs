@@ -53,7 +53,7 @@ public class PhysicsButton : MonoBehaviour
             {
                 float z = ball.transform.localPosition.z;
                 Debug.Log("z" + z);
-                if (z < 12 && z > 8)
+                if (z < 12.5 && z > 7.5)
                 {
                     Debug.Log("win!");
                     platformMoving = true;
