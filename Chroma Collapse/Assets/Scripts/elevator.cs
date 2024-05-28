@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using UnityEngine;
 
 public class elevator : GLOBAL_color
 {
     // Template script/logic sourced from https://www.youtube.com/watch?v=ly9mK0TGJJo 
+    // This derivation can only move between 2 waypoints
     
     [SerializeField]
     private WaypointPath _waypointPath;
@@ -21,35 +23,57 @@ public class elevator : GLOBAL_color
     private int curcol = 0;
 
     private Transform old_parent;
-    private int _target_index;
     private Transform _previousWaypoint;
     private Transform _targetWaypoint;
 
     private float _timeToWaypoint;
-    private float _elapsedTime;
+    private bool moving;
 
     // Start is called before the first frame update
     void Start()
     {
-        TargetNextWaypoint();
+        moving = false;
+        curcol = color;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        _elapsedTime += Time.deltaTime;
+        if (curcol != color) {
 
-        float elapsedPercentage = _elapsedTime / _timeToWaypoint;
-        // Smooth arrival to waypoints
-        elapsedPercentage = Mathf.SmoothStep(0, 1, elapsedPercentage);
-        transform.position = Vector3.Lerp(_previousWaypoint.position, _targetWaypoint.position, elapsedPercentage);
-        transform.rotation = Quaternion.Lerp(_previousWaypoint.rotation, _targetWaypoint.rotation, elapsedPercentage);
+            if (color == up_color) {
+                setWaypoint(0);
+                moving = true;
+            }
+            else if (color == down_color) {
+                setWaypoint(1);
+                moving = true;
+            }
+            else {
+                moving = false;
+            }
 
-        if (elapsedPercentage >= 1 && color == up_color) {
-            TargetNextWaypoint();
+        }
+
+        if (moving) {
+            transform.position = Vector3.MoveTowards(transform.position, _targetWaypoint.position, _speed);
+            transform.rotation = Quaternion.Lerp(transform.rotation, _targetWaypoint.rotation, _speed);
+
+            float distance = (transform.position - _targetWaypoint.position).magnitude;
+
+            if (distance <= 1) {
+                moving = false;
+            }
         }
     }
 
+    private void setWaypoint(int index) {
+        _targetWaypoint = _waypointPath.transform.GetChild(index);
+        float distanceToWaypoint = Vector3.Distance(transform.position, _targetWaypoint.position);
+        _timeToWaypoint = distanceToWaypoint / _speed;
+    }
+
+/*
     private void TargetNextWaypoint() {
         _previousWaypoint = _waypointPath.GetWaypoint(_target_index);
         _target_index = _waypointPath.GetNextWaypointIndex(_target_index);
@@ -60,7 +84,7 @@ public class elevator : GLOBAL_color
         float distanceToWaypoint = Vector3.Distance(_previousWaypoint.position, _targetWaypoint.position);
         _timeToWaypoint = distanceToWaypoint / _speed;
     }
-
+*/
     private void OnTriggerEnter(Collider other) {
 
         // Debug.Log("Other collider " + other.tag + " has entered collider");

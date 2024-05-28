@@ -390,8 +390,6 @@ namespace VolumetricLines
 				UpdateLineScale();
 				UpdateBounds();
 			}
-			m_lineColor = color_array[color];
-			m_material.color = color_array[color];
 		}
 
 		void OnValidate()
