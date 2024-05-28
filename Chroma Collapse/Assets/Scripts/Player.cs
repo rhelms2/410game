@@ -23,4 +23,18 @@ public class Player : MonoBehaviour
         player_instance = this;        
         GameObject.DontDestroyOnLoad(this.gameObject);
     }
+
+    void Start()
+    {
+        if (player_instance != null) {
+            Destroy(this.gameObject);
+            return;
+        } 
+    
+        // If this is the first instance of the player, then we set this as the static
+        // instance. Otherwise we delete it from the scene
+        
+        player_instance = this;        
+        GameObject.DontDestroyOnLoad(this.gameObject);
+    }
 }
