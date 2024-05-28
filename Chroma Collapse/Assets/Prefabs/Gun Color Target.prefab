@@ -203,7 +203,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 14
+  m_VersionIndex: 17
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -483,7 +483,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 17
+  m_VersionIndex: 20
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -6385,7 +6385,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 11
+  m_VersionIndex: 14
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -6608,7 +6608,7 @@ MonoBehaviour:
   - {r: 1, g: 0, b: 1, a: 0}
   - {r: 1, g: 1, b: 1, a: 1}
   diamond: {fileID: 8586760104020270556}
-  activation_color: 1
+  activation_color: 0
   active: 0
 --- !u!65 &1096408293445468738
 BoxCollider:
@@ -6629,8 +6629,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.0020657, y: 3.4537876, z: 3.693342}
-  m_Center: {x: -0.09141064, y: 0.030343771, z: -0.110511184}
+  m_Size: {x: 2.9558258, y: 4.5936055, z: 3.693342}
+  m_Center: {x: 0.27883267, y: 0.30164957, z: -0.110511154}
 --- !u!114 &6341971929929729230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6697,7 +6697,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.428, y: 3.858, z: 35.13}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4.1412983, y: 0.16666667, z: 0.20031933}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1043401002522493311}
