@@ -8,24 +8,33 @@ public class PhysicsButton : MonoBehaviour
     public GameObject button;
     public GameObject ballPrefab;
     public GameObject ballSpawner;
+    public GameObject platform;
+    public GameObject pedestal;
+    public GameObject keyCard;
     private GameObject ball;
     private Vector3 delta_position = new Vector3(0f, 0.05f, 0f);
+    private Vector3 currentPlatformPosition;
+    private Vector3 targetPlatformPosition;
+    public float platformSpeed = 2f;
     private Vector3 lastPosition;
     private Vector3 ballSpeedVector;
     private float ballSpeed;
     private float time_passed = 0;
     private bool pressed = false;
     private bool active = false;
+    private bool platformMoving = true;
 
     // Start is called before the first frame update
     void Start()
     {
         lastPosition = ballSpawner.transform.position;
+        targetPlatformPosition = new Vector3(currentPlatformPosition.x, currentPlatformPosition.y, currentPlatformPosition.z - 2.7f);
     }
 
     void Update()
     {
-        
+        currentPlatformPosition = platform.transform.position;
+
         if (pressed == true)
         {
             Debug.Log(time_passed);
@@ -38,7 +47,16 @@ public class PhysicsButton : MonoBehaviour
             }
 
         }
-        
+        if (platformMoving)
+        {
+            platform.transform.position = Vector3.MoveTowards(currentPlatformPosition, targetPlatformPosition, platformSpeed * Time.deltaTime);
+        }
+        if (currentPlatformPosition == targetPlatformPosition){
+            platformMoving = false;
+        }
+
+
+
     }
 
     IEnumerator ballCheck()
