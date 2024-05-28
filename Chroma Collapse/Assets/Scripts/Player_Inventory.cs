@@ -121,6 +121,9 @@ public class Player_Inventory : GLOBAL_color
             else if (tag == blue_gun_chip) {
                 inventory_activation[5] = true;
             }
+            else if (tag == key_card) {
+                inventory_activation[6] = true;
+            }
         }
 
     }

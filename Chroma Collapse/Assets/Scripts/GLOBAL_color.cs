@@ -12,10 +12,11 @@ public class GLOBAL_color : MonoBehaviour
     public static bool[] inventory_activation = {
         false,   // red
         false,   // yellow
-        false,    // blue
+        false,   // blue
         false,   // gun_red
         false,   // gun_yellow
-        false    // gun_blue
+        false,   // gun_blue
+        false    // key card
     };
     
     // This table keeps track of the active base colors

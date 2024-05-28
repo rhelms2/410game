@@ -83,11 +83,6 @@ public class Player_Movment : MonoBehaviour
             //grounded = false;
         }
 
-        if (Input.GetKeyDown(shoot))
-        {
-            Shoot();
-        }
-
         if ((horizontalInput != 0 || verticalInput != 0) && grounded)
         {
             if (!walking)
@@ -134,11 +129,6 @@ public class Player_Movment : MonoBehaviour
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
 
         grounded = false;
-    }
-
-    private void Shoot()
-    {
-        Debug.Log("shoot!");
     }
 
     //called after jump to reset jumpStatus
