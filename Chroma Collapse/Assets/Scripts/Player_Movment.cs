@@ -133,6 +133,9 @@ public class Player_Movment : MonoBehaviour
         //apply force for jump, using impulse because we want to do it only once.
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
 
+        //trying with delta time, different behaviour, but still kinda scuffed.
+        //rb.AddForce(transform.up * jumpForce * Time.deltaTime, ForceMode.Impulse);
+
         grounded = false;
     }
 
