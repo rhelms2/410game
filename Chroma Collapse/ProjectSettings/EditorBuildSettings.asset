@@ -5,6 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Title Screen.unity
+    guid: 6b56ff2281ca9c942bfecd6382e569ac
+  - enabled: 1
+    path: Assets/Scenes/Alpha level 1.unity
+    guid: f67b482d55057394c8347ed8bdd61645
   - enabled: 0
     path: Assets/Scenes/Sandbox Scene.unity
     guid: 99c9720ab356a0642a771bea13969a05
@@ -14,7 +20,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test Transition Scene.unity
     guid: a4cf9f64e61fafa46b46a5626d3205f1
-  - enabled: 1
-    path: Assets/Scenes/Alpha level 1.unity
-    guid: f67b482d55057394c8347ed8bdd61645
   m_configObjects: {}
