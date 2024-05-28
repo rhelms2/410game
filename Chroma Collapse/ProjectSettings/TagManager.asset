@@ -19,6 +19,7 @@ TagManager:
   - Yellow Gun Chip
   - Blue Gun Chip
   - Key Card
+  - HealthPickup
   layers:
   - Default
   - TransparentFX

@@ -28,13 +28,25 @@ public class GLOBAL_playerhealth : Player_Inventory
             current_health = 0;
             //GAME OVER!
         }
-        else if (current_health > 3) current_health = 3;
+        else if (current_health > MAX_HEALTH) current_health = MAX_HEALTH;
         if (hit_cooldown == true) //now we are immune for a bit
         {
             if (invoke_active == false) {
                 current_health--;
                 Invoke(nameof(CooldownReset), zoosmellPooplord);
                 invoke_active = true;
+            }
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "HealthPickup")
+        {
+            Debug.Log("picked up health!");
+            if (current_health != MAX_HEALTH)
+            {
+                current_health++;
             }
         }
     }
