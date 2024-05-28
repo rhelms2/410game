@@ -23,7 +23,7 @@ public class takeDamage : GLOBAL_color
     }
 
     void OnTriggerEnter(Collider other) {
-        if (color == (int)damageCol){
+        if (other.GetComponent<Light>().color == color_array[(int)damageCol]){
             if (other.tag == "Bullet") {
                 if (hit_cooldown == false) hit_cooldown = true;
             }

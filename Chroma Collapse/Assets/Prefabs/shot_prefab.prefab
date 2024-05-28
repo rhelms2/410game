@@ -137,9 +137,7 @@ MonoBehaviour:
   - {r: 0, g: 1, b: 0, a: 1}
   - {r: 1, g: 0, b: 1, a: 0}
   - {r: 1, g: 1, b: 1, a: 1}
-  rotation_speed: 20
-  color_audio: {fileID: 0}
-  rotate_audio: {fileID: 0}
+  testing: 0
   m_target: {x: 0, y: 0, z: 0}
   collisionExplosion: {fileID: 5024009746357069194, guid: ec3f674830402cc45bce805cf6493db7,
     type: 3}
@@ -245,7 +243,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
