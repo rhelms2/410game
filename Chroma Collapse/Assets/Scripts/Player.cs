@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     public static Player player_instance;
 
     // Start is called before the first frame update
+
+/*
     void Awake()
     {
         if (player_instance != null) {
@@ -23,6 +25,8 @@ public class Player : MonoBehaviour
         player_instance = this;        
         GameObject.DontDestroyOnLoad(this.gameObject);
     }
+
+*/
 
     void Start()
     {
