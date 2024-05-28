@@ -47,6 +47,8 @@ public class moving_platform : MonoBehaviour
         _target_index = _waypointPath.GetNextWaypointIndex(_target_index);
         _targetWaypoint = _waypointPath.GetWaypoint(_target_index);
 
+        Debug.Log("Next Waypoint: ", _targetWaypoint);
+
         _elapsedTime = 0;
 
         float distanceToWaypoint = Vector3.Distance(_previousWaypoint.position, _targetWaypoint.position);
