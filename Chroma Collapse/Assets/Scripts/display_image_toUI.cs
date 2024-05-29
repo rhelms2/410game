@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,6 +8,8 @@ using UnityEngine.UI;
 public class display_image_to_ui : MonoBehaviour
 {
     public Sprite image;
+    public string optional_overlay_text;
+    private TextMeshProUGUI text_target;
     private Image target_display;
     public AudioSource sound_effect;
     private bool in_range = false;
@@ -14,6 +17,7 @@ public class display_image_to_ui : MonoBehaviour
 
     void Start() {
         target_display = GameObject.FindWithTag("Display Port").transform.GetChild(1).gameObject.GetComponent<Image>();
+        text_target = GameObject.FindWithTag("Display Port").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,6 +37,7 @@ public class display_image_to_ui : MonoBehaviour
             in_range = false;
             if (image_active) {
                 image_active = false;
+                text_target.text = "";
                 target_display.color = new Color(1, 1, 1, 0);
                 sound_effect.Play();
             }
@@ -46,11 +51,13 @@ public class display_image_to_ui : MonoBehaviour
             if (!image_active && Input.GetKeyDown("f")) {
                 image_active = true;
                 target_display.sprite = image;
+                text_target.text = optional_overlay_text;
                 target_display.color = new Color(1, 1, 1, 1);
                 sound_effect.Play();
             }
             else if (image_active && Input.GetKeyDown("f")) {
                 image_active = false;
+                text_target.text = "";
                 target_display.color = new Color(1, 1, 1, 0);
                 sound_effect.Play();
             }

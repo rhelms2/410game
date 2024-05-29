@@ -36,6 +36,8 @@ public class GameManagerScript : GLOBAL_playerhealth
     public void Restart()
     {
         if (inventory.Count > 0) {
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(currentSceneIndex);
             current_health = MAX_HEALTH;
             player.transform.position = respawn_point.position;
         }

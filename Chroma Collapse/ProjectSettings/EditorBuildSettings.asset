@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Beta Level/2f/Plinko.unity
     guid: ec28c401f2dfa4e60aee8a18e9c2ab00
+  - enabled: 1
+    path: Assets/Scenes/Beta Level/1f/YOUWIN.unity
+    guid: 79c10bfaacb1c694bb2cd57162db4c6a
   m_configObjects: {}
