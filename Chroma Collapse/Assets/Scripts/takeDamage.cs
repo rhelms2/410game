@@ -11,6 +11,7 @@ public class takeDamage : GLOBAL_color
     bool invoke_active = false;
     public float zoosmellPooplord = 1f;
     public color_enum damageCol;
+    
     // Start is called before the first frame update
     void Start()
     {

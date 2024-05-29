@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class goomSprite : MonoBehaviour
+public class goomSprite : Goomber_All
 {
     float myY;
     public GameObject follow;

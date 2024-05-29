@@ -31,7 +31,7 @@ public class HUD_healthbar : GLOBAL_playerhealth
             healthImg[cur_health].enabled = true;
         }
 
-        if(cur_health == 0)
+        if(cur_health <= 0)
         {
             //gameover 
             Debug.Log("gameover");
