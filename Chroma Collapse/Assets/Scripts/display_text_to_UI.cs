@@ -9,7 +9,11 @@ public class display_text_to_UI : MonoBehaviour
 {
     public string text;
     public bool destroy_on_exit = false;
-    public TextMeshProUGUI display_target;
+    private TextMeshProUGUI display_target;
+
+    void Start() {
+        display_target = GameObject.FindWithTag("Display Port").transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {

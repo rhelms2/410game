@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEditor;
 using System;
 
-public class Scene_Transition : MonoBehaviour
+public class Scene_Transition : GLOBAL_color
 {
     
     // [SerializeField] private int scene_index;
@@ -26,6 +26,7 @@ public class Scene_Transition : MonoBehaviour
             // SceneManager.LoadSceneAsync(scene.name, LoadSceneMode.Single);
             other.transform.parent.position = spawn_position;
             // Debug.Log("Player transferred to new scene");
+            color = 0;
         }
     }
     
