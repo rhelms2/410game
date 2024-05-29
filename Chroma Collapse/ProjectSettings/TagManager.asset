@@ -20,6 +20,7 @@ TagManager:
   - Blue Gun Chip
   - Key Card
   - HealthPickup
+  - Display Port
   layers:
   - Default
   - TransparentFX

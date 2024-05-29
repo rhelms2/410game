@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         if (player_instance != null) {
+            Destroy(this.transform.GetChild(0).gameObject);    // Destroy the player as well... not happening for some reason
             Destroy(this.gameObject);
             return;
         } 

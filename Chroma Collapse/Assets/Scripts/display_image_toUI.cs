@@ -7,10 +7,14 @@ using UnityEngine.UI;
 public class display_image_to_ui : MonoBehaviour
 {
     public Sprite image;
-    public Image target_display;
+    private Image target_display;
     public AudioSource sound_effect;
     private bool in_range = false;
     private bool image_active = false;
+
+    void Start() {
+        target_display = GameObject.FindWithTag("Display Port").transform.GetChild(1).gameObject.GetComponent<Image>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {

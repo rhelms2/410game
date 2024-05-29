@@ -35,4 +35,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Beta Level/2f/Maze.unity
     guid: 1a10db6cf12ce514789bd984a65333f4
+  - enabled: 1
+    path: Assets/Scenes/Beta Level/2f/JumpingPuzzle.unity
+    guid: fd9ff30fb78dc5b40840828c2f706f5e
+  - enabled: 1
+    path: Assets/Scenes/Beta Level/2f/Plinko.unity
+    guid: ec28c401f2dfa4e60aee8a18e9c2ab00
   m_configObjects: {}
