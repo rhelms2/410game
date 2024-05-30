@@ -18,14 +18,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Title Screen.unity
     guid: 6b56ff2281ca9c942bfecd6382e569ac
   - enabled: 1
-    path: Assets/Scenes/Beta Level/1f/MainDoorRoom.unity
-    guid: 108ed84c0f57d40568d99819c553adb0
+    path: Assets/Scenes/Beta Level/1f/GoonberHall.unity
+    guid: 6632ebc40518e4e3aaaf5d8ba3163eb0
   - enabled: 1
     path: Assets/Scenes/Alpha level 1.unity
     guid: f67b482d55057394c8347ed8bdd61645
   - enabled: 1
-    path: Assets/Scenes/Beta Level/1f/GoonberHall.unity
-    guid: 6632ebc40518e4e3aaaf5d8ba3163eb0
+    path: Assets/Scenes/Beta Level/1f/MainDoorRoom.unity
+    guid: 108ed84c0f57d40568d99819c553adb0
   - enabled: 1
     path: Assets/Scenes/Beta Level/1f/ElevatorRoom.unity
     guid: 168b22a7338ace5408cf1b82cd83dab2

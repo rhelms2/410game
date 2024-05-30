@@ -836,7 +836,6 @@ MonoBehaviour:
   - {r: 0, g: 1, b: 0, a: 1}
   - {r: 1, g: 0, b: 1, a: 0}
   - {r: 1, g: 1, b: 1, a: 1}
-  Object: {fileID: 6418874713489145864}
 --- !u!1 &6712373257321797235
 GameObject:
   m_ObjectHideFlags: 0
@@ -2577,6 +2576,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4927506014349681612, guid: a5a3c819ace6b4a349fc1ecfc5dfdcc0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5704323707667331446, guid: a5a3c819ace6b4a349fc1ecfc5dfdcc0,
         type: 3}
