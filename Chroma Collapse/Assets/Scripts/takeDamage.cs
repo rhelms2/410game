@@ -11,6 +11,7 @@ public class takeDamage : GLOBAL_color
     bool invoke_active = false;
     public float zoosmellPooplord = 1f;
     public color_enum damageCol;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +24,9 @@ public class takeDamage : GLOBAL_color
     }
 
     void OnTriggerEnter(Collider other) {
-        if (other.GetComponent<Light>().color == color_array[(int)damageCol]){
-            if (other.tag == "Bullet") {
+        
+        if (other.tag == "Bullet") {
+            if (other.GetComponent<Light>().color == color_array[(int)damageCol]){
                 if (hit_cooldown == false) hit_cooldown = true;
             }
         }

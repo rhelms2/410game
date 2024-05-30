@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 public class Custom_Door : Player_Inventory
 {
     [SerializeField] private GameObject Door;
+    public string item_tag;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,7 @@ public class Custom_Door : Player_Inventory
     // Update is called once per frame
     void Update()
     {
-        if (inventory.Count > 0) {
+        if (inventory.Contains(item_tag)) {
             Door.transform.gameObject.GetComponent<door_vertical>().enabled = true;
             Destroy(this);
         }

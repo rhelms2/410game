@@ -21,6 +21,7 @@ TagManager:
   - Key Card
   - HealthPickup
   - Display Port
+  - Respawn Point
   layers:
   - Default
   - TransparentFX

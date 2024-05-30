@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
 
 */
 
+
     void Start()
     {
         if (player_instance != null) {
@@ -42,4 +43,6 @@ public class Player : MonoBehaviour
         player_instance = this;        
         GameObject.DontDestroyOnLoad(this.gameObject);
     }
+
+
 }

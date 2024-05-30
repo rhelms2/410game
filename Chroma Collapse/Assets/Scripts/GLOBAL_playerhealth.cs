@@ -46,7 +46,7 @@ public class GLOBAL_playerhealth : Player_Inventory
             Debug.Log("picked up health!");
             if (current_health != MAX_HEALTH)
             {
-                current_health++;
+                current_health = MAX_HEALTH;
             }
         }
     }
