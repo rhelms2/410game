@@ -17,23 +17,11 @@ public class PhysicsButton : MonoBehaviour
     public MovePedestal movePedestal;
     private Vector3 deltaButtonPosition = new Vector3(0f, 0.05f, 0f);
 
-    public string optional_overlay_text;
+    public string overlay_text;
     private TextMeshProUGUI text_target;
-    private Image target_display;
     private bool in_range = false;
     private bool fPressed = false;
-
-    //public GameObject platform;
-    //public GameObject pedestal;
-    //public GameObject item;
-    //private Vector3 deltaPedestalPosition = new Vector3(0f, 2.5f, 0f);
-    //private Vector3 targetPedestalPosition;
-    //private Vector3 targetItemPosition;
-    //private Vector3 targetPlatformPosition;
-    //public float platformSpeed = 2f;
-    //private bool platformMoving = false;
-    //private bool pedestalMoving = false;
-    //private bool keyCardMoving = false;
+    private bool displaying = true;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +30,6 @@ public class PhysicsButton : MonoBehaviour
         //targetPedestalPosition = pedestal.transform.position + deltaPedestalPosition;
         //targetItemPosition = item.transform.position + deltaPedestalPosition;
 
-        target_display = GameObject.FindWithTag("Display Port").transform.GetChild(1).gameObject.GetComponent<Image>();
         text_target = GameObject.FindWithTag("Display Port").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
     }
 
@@ -51,7 +38,7 @@ public class PhysicsButton : MonoBehaviour
         if (pressed == true)
         {
             time_passed += Time.deltaTime;
-            if (time_passed >= 0.5f)
+            if (time_passed >= 1f)
             {
                 pressed = false;
                 time_passed = 0;
@@ -65,16 +52,33 @@ public class PhysicsButton : MonoBehaviour
             if (ball.transform.localPosition.y < -18.5f)
             {
                 float z = ball.transform.localPosition.z;
-                Debug.Log("z" + z);
                 if (z < 13 && z > 7)
                 {
-                    Debug.Log("win!");
                     movePedestal.platformMoving = true;
                 }
                 active = false;
             }
         }
 
+        if (in_range && !fPressed)
+        {
+            text_target.text = overlay_text;
+            displaying = true;
+        }
+        if (Input.GetKeyDown("f") && !pressed)
+        {
+            makeBall();
+            pressed = true;
+            if (!fPressed)
+            {
+                fPressed = true;
+                text_target.text = "";
+            }
+        }
+        //if (!in_range && displaying)
+        //{
+        //    text_target.text = "";
+        //}
     }
 
 
@@ -84,10 +88,7 @@ public class PhysicsButton : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             in_range = true;
-            if (Input.GetKeyDown("f"))
-            {
-                active = true;
-            }
+            
         }
     }
 
@@ -100,28 +101,9 @@ public class PhysicsButton : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Bullet")
-        {
-            if (pressed == false)
-            {
-                pressed = true;
-                //button.transform.localPosition -= deltaButtonPosition;
-                //if (!active)
-                //{
-                //    ball = Instantiate(ballPrefab, ballSpawner.transform.position, ballSpawner.transform.rotation);
-                //    ball.transform.parent = ballSpawner.transform;
-                //    active = true;
-                //}
-
-            }
-
-        }
-    }
-
     private void makeBall()
     {
+        pressed = true;
         button.transform.localPosition -= deltaButtonPosition;
         if (!active)
         {
@@ -130,29 +112,4 @@ public class PhysicsButton : MonoBehaviour
             active = true;
         }
     }
-
-    //IEnumerator ballCheck()
-    //{
-    //    while (active)
-    //    {
-    //        //Debug.Log("Coroutine started");
-    //        //lastPosition = ball.transform.position;
-    //        //yield return new WaitForEndOfFrame();
-    //        //Debug.Log("After WaitForEndOfFrame");
-
-    //        //Debug.Log("Current Position: " + ball.transform.position);
-    //        //Debug.Log("Last Position: " + lastPosition);
-
-    //        //ballSpeedVector = (ball.transform.position - lastPosition);
-    //        //ballSpeed = ballSpeedVector.magnitude / Time.deltaTime;
-    //        //Debug.Log("Ball Speed: " + ballSpeed);
-
-
-
-    //        yield return null; // Ensure the coroutine runs continuously
-    //    }
-    //}
-
-
-
 }
