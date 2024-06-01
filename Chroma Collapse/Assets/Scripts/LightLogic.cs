@@ -5,6 +5,7 @@ using UnityEngine;
 public class LightLogic : GLOBAL_color
 {
     public GameObject lightBulb;
+    public Light actualLight;
     public float colorTimeDelay = 1f; // Time in between color flashes
     public bool active = false; // Dont Change! Modified by ButtonPressed.cs
     public bool finished = false; // Dont Change! Modified by ButtonPressed.cs
@@ -15,13 +16,13 @@ public class LightLogic : GLOBAL_color
     private int prevColor;
     private int currentColor;
     private bool roundPassed;
-    private Light actualLight;
     private List<int> colorOrder;
 
     // Start is called before the first frame update
     void Start()
     {
         actualLight = lightBulb.GetComponent<Light>();
+        actualLight.intensity = 0;
         colorOrder = new List<int> { 2, 5, 7, 6, 1, 4 };
         numColors = colorOrder.Count;
         prevColor = colorOrder[0];
@@ -40,6 +41,7 @@ public class LightLogic : GLOBAL_color
                 finished = true;
                 active = false;
                 colorTimePassed = 0f;
+                actualLight.intensity = 0;
             }
 
             else
@@ -50,7 +52,7 @@ public class LightLogic : GLOBAL_color
                 {
                     roundPassed = true;
                 }
-                if (prevColor != colorOrder[time])
+                if (prevColor != currentColor)
                 {
                     if (!roundPassed)
                     {

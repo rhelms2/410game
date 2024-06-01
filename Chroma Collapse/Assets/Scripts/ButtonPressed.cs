@@ -53,6 +53,7 @@ public class LightButton : MonoBehaviour
         {
             pressed = true;
             lightLogic.active = true;
+            lightLogic.actualLight.intensity = 1000;
             button.transform.localPosition -= deltaButtonPosition;
             if (!fPressed)
             {
