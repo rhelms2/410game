@@ -29,12 +29,13 @@ public class block_collision_switcher : GLOBAL_color
     // Start is called before the first frame update
     void Start()
     {
+        // Debug.Log("Start is being called");
         if ((tolerance < 0) || (tolerance > 3)) {
             Debug.LogError("tolerance must be an integer between 0 and 3!");
         }     
         else {
-            curcol = color;
-            UpdateObject(2);
+            curcol = 17;
+            // UpdateObject(2);
         }
     }
 
@@ -108,6 +109,7 @@ public class block_collision_switcher : GLOBAL_color
         }
         else {
             if (negate == false) {
+                // Debug.Log("Material being set to wire");
                 obj.GetComponent<Renderer>().material = wire;
                 rb.detectCollisions = false;
             }

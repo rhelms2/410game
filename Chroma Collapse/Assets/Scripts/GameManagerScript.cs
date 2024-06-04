@@ -24,7 +24,7 @@ public class GameManagerScript : GLOBAL_playerhealth
     // Update is called once per frame
     void Update()
     {
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.FindWithTag("Player").transform.parent.gameObject;
 
     }
 
@@ -36,40 +36,24 @@ public class GameManagerScript : GLOBAL_playerhealth
 
     public void Restart()
     {
-        Debug.Log("Current Player Object: " + player);
-        if (inventory.Count > 0) {
-            if (player.transform == null) {
-                Debug.Log("Player is null ");
-                player = GameObject.FindWithTag("Player").transform.parent.gameObject;  // Double check we have the right object... annoying
-                player.transform.position = respawn_point.position;
-                //player = GameObject.FindWithTag("Player").transform.parent.gameObject;  // Double check we have the right object... annoying
-            }
-            else {
-                Debug.Log("Player transform is not null ");
-                player = GameObject.FindWithTag("Player").transform.parent.gameObject;  // Double check we have the right object... annoying
-                player.transform.position = respawn_point.position;           
-            }
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(currentSceneIndex);
-            current_health = MAX_HEALTH;
+        // Debug.Log("Current Player Object: " + player);
+        if (player.transform == null) {
+            // Debug.Log("Player is null ");
         }
         else {
-            if (player.transform.position == null) {
-                Debug.Log("Player is null ");
-                player = GameObject.FindWithTag("Player").transform.parent.gameObject;  // Double check we have the right object... annoying
-                player.transform.position = respawn_point.position;
-                // player = GameObject.FindWithTag("Player").transform.parent.gameObject;  // Double check we have the right object... annoying
-            }
-            else {
-                player = GameObject.FindWithTag("Player").transform.parent.gameObject;  // Double check we have the right object... annoying
-                player.transform.position = respawn_point.position;
-                Debug.Log("Player transform is not null ");
-                //player = GameObject.FindWithTag("Player").transform.parent.gameObject;  // Double check we have the right object... annoying
-                player.transform.position = respawn_point.position;
-            }
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(currentSceneIndex);
-            current_health = MAX_HEALTH;
+            // Debug.Log("Player transform is not null ");           
         }
+        // player.transform.position = respawn_point.position;      
+        // Debug.Log("Reloading Scene and setting player to spawn position");
+        // int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        // SceneManager.LoadScene(currentSceneIndex);
+        current_health = MAX_HEALTH;
+        // Debug.Log("Old Player Position: " + player.transform.position);
+        // Debug.Log("Respawn Position: " + respawn_point.position);
+        player.transform.position = respawn_point.position;
+        // Debug.Log("New Player Position: " + player.transform.position);
+        player.transform.rotation = respawn_point.rotation;
+            
+        // Debug.Log("current_health: " + current_health + " MAX HEALTH: " + MAX_HEALTH);
     }
 }

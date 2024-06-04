@@ -9,6 +9,7 @@ public class Goomber_All : GLOBAL_playerhealth
     float x, y, z, counter, angle, activeX, activeZ;
     Vector3 origVect;
     public int defense_color;
+    public int knockback_force = 25;
     public int damage_color;
     public float moveSpeed = 2f;
     //https://www.youtube.com/watch?v=4Wh22ynlLyk
@@ -47,16 +48,21 @@ public class Goomber_All : GLOBAL_playerhealth
 
     void checkCollision(){
         if (player.transform == null) {
-            Debug.Log("PLAYER IS NULL!!!!!!");
+            //Debug.Log("PLAYER IS NULL!!!!!!");
         }
         else {
-            Debug.Log("PLAYER IS NOT NULL!!!!!!");
+            //Debug.Log("PLAYER IS NOT NULL!!!!!!");
         }
         if (Vector3.Distance(player.transform.position, transform.position) < 2f){
             if (color == defense_color) {
             }
             else {
                 if (hit_cooldown == false) hit_cooldown = true;
+
+                // Knock the player away
+                Vector3 direction = (transform.position - player.transform.position).normalized;
+                direction.y = 0.5f;
+                player.transform.parent.GetComponent<Rigidbody>().AddForce(direction * knockback_force);
             }
         }
     }

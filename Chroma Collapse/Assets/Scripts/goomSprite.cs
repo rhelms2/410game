@@ -16,7 +16,7 @@ public class goomSprite : Goomber_All
     }
     void Update(){
         //transform.position = follow.transform.position;
-        transform.position = new Vector3(follow.transform.position.x, myY, follow.transform.position.z);
+        transform.position = follow.transform.position;
         transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, follow.transform.localEulerAngles.y, transform.localEulerAngles.z);
         //transform.rotation = follow.transform.rotation;
     }

@@ -1384,7 +1384,7 @@ GameObject:
   - component: {fileID: 4989118766309762806}
   - component: {fileID: 2758094035569597073}
   m_Layer: 0
-  m_Name: Audio Listener
+  m_Name: Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

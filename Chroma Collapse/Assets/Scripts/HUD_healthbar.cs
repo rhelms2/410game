@@ -36,7 +36,7 @@ public class HUD_healthbar : GLOBAL_playerhealth
             //gameover 
             Debug.Log("gameover");
             gameover = true;
-            gameManager.GameOver();
+            // gameManager.GameOver();
             gameManager.Restart();
 
 
