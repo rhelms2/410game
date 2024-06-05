@@ -5,7 +5,7 @@ using UnityEngine;
 public class Zorb_All : GLOBAL_playerhealth
 {
     private GameObject player;
-    public GameObject walls;
+    //public GameObject walls;
     //https://www.youtube.com/watch?v=BGe5HDsyhkY
     float x, y, z, counter, angle, activeX, activeZ;
     Vector3 origVect;
@@ -17,6 +17,7 @@ public class Zorb_All : GLOBAL_playerhealth
     public color_enum myCol;
     bool isOn = false;
     bool wallhit = true;
+    Collider col;
     //NOTE: this is super cheap, but if you have the object floating
     //slightly above the ground the script below and the rigidbody
     //will make it jitter like it's walking around
@@ -31,6 +32,7 @@ public class Zorb_All : GLOBAL_playerhealth
         activeZ = origVect.z;
         y = origVect.y;
         rb = this.GetComponent<Rigidbody>();
+        col = this.GetComponent<Collider>();
     }
 
     //I took this from project 2
@@ -51,49 +53,54 @@ public class Zorb_All : GLOBAL_playerhealth
         }
     }
 
+    public void wallHitTrue() {
+        wallhit = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
         if ((int)myCol == color) isOn = true;
         else isOn = false;
         if (isOn) checkCollision();
+
         counter += Time.deltaTime;
-        if ((Vector3.Distance(player.transform.position, transform.position) < 10f) && isOn){
-            //In radius, follow the player
-            if (wallhit){
-                if (turning == null){
-                    Vector3 looking = player.transform.position;
-                    looking.y = transform.position.y;
-                    StartCoroutine(RoutineTurn(transform, looking, 1f));
-                }
-                wallhit = false;
-                dir = player.transform.position - transform.position;
-                dir.Normalize();
-            }
-            //Tip: if you want it to follow you and then circle in the place
-            //you left its radius, use origVect or remove the following check
-        } else if (wallhit) { 
-            if ((activeX != origVect.x) || (activeZ != origVect.z)){
-                if (turning == null) {
-                    StartCoroutine(RoutineTurn(transform, origVect, 1f));
-                }
-                dir = origVect - transform.position;
-                dir.Normalize();
-                activeX += dir.x * Time.deltaTime * moveSpeed * 0.7f;
-                activeZ += dir.z * Time.deltaTime * moveSpeed * 0.7f;
-                x = activeX;
-                z = activeZ;
-                //Snap to origin
-                if (Mathf.Abs(activeX - origVect.x) <= 1) activeX = origVect.x;
-                if (Mathf.Abs(activeZ - origVect.z) <= 1) activeZ = origVect.z;
-            } else { //SPIN!!!
-                x = activeX + Mathf.Cos((counter*3)+7) * 1;
-                z = activeZ + Mathf.Sin(counter*4-2) * 2;
-                //perhaps it looks a little silly
-                if (turning == null){
-                    StartCoroutine(RoutineTurn(transform, new Vector3(
-                        origVect.x + Random.Range(-50, 50), 0, origVect.z + 
-                        Random.Range(-50, 50)), 1f));
+        if (wallhit){
+            if ((Vector3.Distance(player.transform.position, transform.position) < 10f) && isOn){
+                //In radius, follow the player
+                    if (turning == null){
+                        Vector3 looking = player.transform.position;
+                        looking.y = transform.position.y;
+                        StartCoroutine(RoutineTurn(transform, looking, 1f));
+                    }
+                    wallhit = false;
+                    dir = player.transform.position - transform.position;
+                    dir.Normalize();
+                //Tip: if you want it to follow you and then circle in the place
+                //you left its radius, use origVect or remove the following check
+            } else  { 
+                if ((activeX != origVect.x) || (activeZ != origVect.z)){
+                    if (turning == null) {
+                        StartCoroutine(RoutineTurn(transform, origVect, 1f));
+                    }
+                    dir = origVect - transform.position;
+                    dir.Normalize();
+                    activeX += dir.x * Time.deltaTime * moveSpeed * 0.7f;
+                    activeZ += dir.z * Time.deltaTime * moveSpeed * 0.7f;
+                    x = activeX;
+                    z = activeZ;
+                    //Snap to origin
+                    if (Mathf.Abs(activeX - origVect.x) <= 1) activeX = origVect.x;
+                    if (Mathf.Abs(activeZ - origVect.z) <= 1) activeZ = origVect.z;
+                } else { //SPIN!!!
+                    x = activeX + Mathf.Cos((counter*3)+7) * 1;
+                    z = activeZ + Mathf.Sin(counter*4-2) * 2;
+                    //perhaps it looks a little silly
+                    if (turning == null){
+                        StartCoroutine(RoutineTurn(transform, new Vector3(
+                            origVect.x + Random.Range(-50, 50), 0, origVect.z + 
+                            Random.Range(-50, 50)), 1f));
+                    }
                 }
             }
         }

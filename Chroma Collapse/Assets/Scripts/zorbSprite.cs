@@ -4,10 +4,10 @@ public class zorbSprite : MonoBehaviour
 {
     float myY;
     public GameObject follow;
-    //public Animator anim;
+    public Animator anim;
     void Start() {
         myY = transform.position.y;
-        //anim.Play("goombidle");
+        anim.Play("zorbWalk");
     }
     void OnTriggerEnter(Collider other) {
         if (other.tag == "Bullet") {
