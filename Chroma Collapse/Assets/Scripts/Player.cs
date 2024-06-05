@@ -47,7 +47,7 @@ public class Player : GLOBAL_color
     }
 
 
-    public void Fade() {
+    public void FadeOut() {
         Debug.Log("IN FADE");
         RawImage display = GameObject.FindWithTag("Fade Target").GetComponent<RawImage>();
 

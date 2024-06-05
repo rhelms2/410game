@@ -47,6 +47,8 @@ public class GameManagerScript : GLOBAL_playerhealth
         // Debug.Log("Reloading Scene and setting player to spawn position");
         // int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         // SceneManager.LoadScene(currentSceneIndex);
+        player = GameObject.FindWithTag("Player").transform.parent.gameObject;
+        respawn_point = GameObject.FindWithTag("Respawn Point").transform;
         current_health = MAX_HEALTH;
         // Debug.Log("Old Player Position: " + player.transform.position);
         // Debug.Log("Respawn Position: " + respawn_point.position);

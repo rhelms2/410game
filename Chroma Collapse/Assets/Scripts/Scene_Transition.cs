@@ -22,7 +22,7 @@ public class Scene_Transition : GLOBAL_color
     void OnTriggerEnter(Collider other) {
         if (other.tag == "Player") {
             // Debug.Log("Scene to load: " + SceneManager.GetSceneByName(scene_name));
-            other.transform.parent.parent.GetComponent<Player>().Fade();
+            other.transform.parent.parent.GetComponent<Player>().FadeOut();
             SceneManager.LoadSceneAsync(scene_name, LoadSceneMode.Single);
             // SceneManager.MoveGameObjectToScene(other.transform.root.gameObject, scene);
             // SceneManager.LoadSceneAsync(scene.name, LoadSceneMode.Single);
