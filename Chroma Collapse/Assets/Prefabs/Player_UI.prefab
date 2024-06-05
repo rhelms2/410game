@@ -505,7 +505,10 @@ MonoBehaviour:
   - {r: 1, g: 0, b: 1, a: 0}
   - {r: 1, g: 1, b: 1, a: 1}
   testing: 0
+  flash_speed: 15
   zoosmellPooplord: 1
+  hurt: {fileID: 0}
+  display: {fileID: 0}
 --- !u!114 &1038727296197183089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -998,7 +1001,10 @@ MonoBehaviour:
   - {r: 1, g: 0, b: 1, a: 0}
   - {r: 1, g: 1, b: 1, a: 1}
   testing: 0
+  flash_speed: 15
   zoosmellPooplord: 1
+  hurt: {fileID: 0}
+  display: {fileID: 0}
 --- !u!1 &7120725730720847557
 GameObject:
   m_ObjectHideFlags: 0
@@ -2096,6 +2102,11 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 4292133278434847808}
+    - target: {fileID: 965179953235487519, guid: 41cf72d80f14e4fe39369b156f1c45dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Fade Target
+      objectReference: {fileID: 0}
     - target: {fileID: 1978561405323827744, guid: 41cf72d80f14e4fe39369b156f1c45dc,
         type: 3}
       propertyPath: m_TagString

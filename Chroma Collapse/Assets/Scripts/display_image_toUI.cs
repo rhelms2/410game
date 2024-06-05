@@ -14,10 +14,17 @@ public class display_image_to_ui : MonoBehaviour
     public AudioSource sound_effect;
     private bool in_range = false;
     private bool image_active = false;
+    public bool automatic = false;
 
     void Start() {
         target_display = GameObject.FindWithTag("Display Port").transform.GetChild(1).gameObject.GetComponent<Image>();
         text_target = GameObject.FindWithTag("Display Port").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
+        if (automatic) {
+            target_display.sprite = image;
+            target_display.sprite = image;
+            text_target.text = optional_overlay_text;
+            target_display.color = new Color(1, 1, 1, 1);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -62,5 +69,6 @@ public class display_image_to_ui : MonoBehaviour
                 sound_effect.Play();
             }
         }
+        
     }
 }

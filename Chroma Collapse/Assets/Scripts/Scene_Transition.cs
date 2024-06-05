@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEditor;
 using System;
+using UnityEngine.UI;
 
 public class Scene_Transition : GLOBAL_color
 {
@@ -17,10 +18,11 @@ public class Scene_Transition : GLOBAL_color
     
     [SerializeField]
     private Vector3 spawn_position;
-    
+
     void OnTriggerEnter(Collider other) {
         if (other.tag == "Player") {
             // Debug.Log("Scene to load: " + SceneManager.GetSceneByName(scene_name));
+            other.transform.parent.parent.GetComponent<Player>().Fade();
             SceneManager.LoadSceneAsync(scene_name, LoadSceneMode.Single);
             // SceneManager.MoveGameObjectToScene(other.transform.root.gameObject, scene);
             // SceneManager.LoadSceneAsync(scene.name, LoadSceneMode.Single);

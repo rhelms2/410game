@@ -22,6 +22,7 @@ TagManager:
   - HealthPickup
   - Display Port
   - Respawn Point
+  - Fade Target
   layers:
   - Default
   - TransparentFX

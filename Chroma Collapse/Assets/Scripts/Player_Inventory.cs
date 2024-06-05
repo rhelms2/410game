@@ -29,7 +29,7 @@ public class Player_Inventory : GLOBAL_color
             inventory.Add(red_crystal_tag);
             inventory.Add(yellow_crystal_tag);
             inventory.Add(blue_crystal_tag);
-            /* 
+             
             inventory.Add(gun_tag);
             inventory.Add(red_gun_chip);
             inventory.Add(yellow_gun_chip);
@@ -42,7 +42,7 @@ public class Player_Inventory : GLOBAL_color
                 inventory_activation[i] = true;
                 i++;
             }
-            */
+            //*/
 
             for (int j = 0; j < 3; j++) {
                 inventory_activation[j] = true;
