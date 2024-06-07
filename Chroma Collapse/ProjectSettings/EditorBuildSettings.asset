@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Alpha level 1.unity
     guid: f67b482d55057394c8347ed8bdd61645
   - enabled: 1
+    path: Assets/Scenes/Beta Level/2f/Maze.unity
+    guid: 1a10db6cf12ce514789bd984a65333f4
+  - enabled: 1
     path: Assets/Scenes/Beta Level/1f/GoonberHall.unity
     guid: 6632ebc40518e4e3aaaf5d8ba3163eb0
   - enabled: 1
@@ -32,9 +35,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Beta Level/0f/LightPuzzle.unity
     guid: 51cc37b7daeb2614dbee43b6c050a71c
-  - enabled: 1
-    path: Assets/Scenes/Beta Level/2f/Maze.unity
-    guid: 1a10db6cf12ce514789bd984a65333f4
   - enabled: 1
     path: Assets/Scenes/Beta Level/2f/JumpingPuzzle.unity
     guid: 41f9919fd78c24548b9839d2d0016be7
