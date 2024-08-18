@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Custom_Door : Player_Inventory
+public class Custom_Door : MonoBehaviour
 {
     [SerializeField] private GameObject Door;
-    public string item_tag;
+    public int item_index;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +17,7 @@ public class Custom_Door : Player_Inventory
     // Update is called once per frame
     void Update()
     {
-        if (inventory.Contains(item_tag)) {
+        if (Player_Inventory.instance.inventory_activation[item_index]) {
             Door.transform.gameObject.GetComponent<door_vertical>().enabled = true;
             Destroy(this);
         }

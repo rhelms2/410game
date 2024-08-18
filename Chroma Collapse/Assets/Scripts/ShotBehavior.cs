@@ -2,17 +2,24 @@
 using System.Collections;
 // using UnityEditor.UI;
 using Unity.VisualScripting;
+using System.Collections.Generic;
 // using UnityEditor.Search;
 
 //https://www.youtube.com/watch?v=Yl9MhhoBkFU
 
-public class ShotBehavior : Player_Inventory
+public class ShotBehavior : GLOBAL_color
 {
 
     public Vector3 m_target;
     public GameObject collisionExplosion;
     public float speed;
     public GameObject self;
+
+    bool[] inventory_activation;
+
+    void Start() {
+        inventory_activation = Player_Inventory.instance.inventory_activation;
+    }
 
     // Update is called once per frame
     [System.Obsolete]
@@ -57,32 +64,32 @@ public class ShotBehavior : Player_Inventory
         bool set_true_color = false;
 
         if (color == (int) color_enum.white) {
-            if (inventory_activation[5] && inventory_activation[4] && inventory_activation[3]) {
+            if (inventory_activation[5] && inventory_activation[6] && inventory_activation[7]) {
                 set_true_color = true;
             }
         }
         else if (color == (int) color_enum.green) {
-            if (inventory_activation[5] && inventory_activation[4]) {
+            if (inventory_activation[6] && inventory_activation[7]) {
                 set_true_color = true;
             }
         }
         else if (color == (int) color_enum.purple) {
-            if (inventory_activation[5] && inventory_activation[3]) {
+            if (inventory_activation[5] && inventory_activation[7]) {
                 set_true_color = true;
             }
         }
         else if (color == (int) color_enum.orange) {
-            if (inventory_activation[4] && inventory_activation[3]) {
+            if (inventory_activation[5] && inventory_activation[6]) {
                 set_true_color = true;
             }
         }
-        else if (color == (int) color_enum.red && inventory_activation[3]) {
+        else if (color == (int) color_enum.red && inventory_activation[5]) {
             set_true_color = true;
         }
-        else if (color == (int) color_enum.yellow && inventory_activation[4]) {
+        else if (color == (int) color_enum.yellow && inventory_activation[6]) {
             set_true_color = true;
         }
-        else if (color == (int) color_enum.blue && inventory_activation[5]) {
+        else if (color == (int) color_enum.blue && inventory_activation[7]) {
             set_true_color = true;
         }
 

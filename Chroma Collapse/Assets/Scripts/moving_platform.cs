@@ -60,8 +60,7 @@ public class moving_platform : MonoBehaviour
         // Debug.Log("Other collider " + other.tag + " has entered collider");
 
         if (other.tag == "Player") {
-            old_parent = other.transform.parent.parent;
-            other.transform.parent.SetParent(transform);
+            other.transform.SetParent(transform);
         }
         else if (other.tag == "Gravity Sensitive Object") {
              other.transform.SetParent(transform);
@@ -73,7 +72,8 @@ public class moving_platform : MonoBehaviour
         // Debug.Log("Other collider " + other.tag + " has exited collider");
 
         if (other.tag == "Player") {
-            other.transform.parent.SetParent(old_parent);
+            other.transform.SetParent(null);
+            DontDestroyOnLoad(other);
         }
         else if (other.tag == "Gravity Sensitive Object") {
              other.transform.SetParent(null);

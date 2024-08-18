@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4347532159341788827}
   m_Layer: 0
   m_Name: blue chip
-  m_TagString: Blue Chip Pickup
+  m_TagString: Blue Gun Chip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,17 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b24c65a3b2a925479ee8cf4cf5d3214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color_array:
-  - {r: 0, g: 0, b: 0, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  - {r: 0, g: 0, b: 1, a: 1}
-  - {r: 1, g: 0.5, b: 0, a: 0}
-  - {r: 0, g: 1, b: 0, a: 1}
-  - {r: 1, g: 0, b: 1, a: 0}
-  - {r: 1, g: 1, b: 1, a: 1}
-  testing: 0
-  item: {fileID: 7059140887872068229}
+  item_index: 3
   pickup_noise: {fileID: 0}
 --- !u!136 &4347532159341788827
 CapsuleCollider:

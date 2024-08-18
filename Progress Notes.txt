@@ -1,0 +1,45 @@
+7/30/24 -
+
+Starting a journal to record progress on the project as well as the hours I
+spend practicing making games.
+
+Today I added singleton classes with static instances for the prefabs Player,
+GameManager, and Display/HUD game objects. This took about 20 minutes.
+
+8/06/24 = 
+
+Worked for about 10 hours on scene transitions. Ironed out a couple bugs with singletons. The scene transition works inconsistently. Not sure why this is (my hunch is that sometimes loading and unloading scenes/playing animations takes differing numbers of frames, so sometimes the spawn is set to the old scene's), but when it works as intended everything is dandy. A possible way to fix this would be to use
+await statements for the methods that NEED to be complete before more are called, which would mean adding in an Async library. 
+
+8/07/24 -
+
+Scene transitions are now consistently fetching the right spawn object and deleting the correct instances of singletons. There are still some timing issues with fading
+the screen in and out as well as freezing the player inputs, but this is a good place to move onto other things. I was able to do this just with a Coroutine.
+
+Some progress made on the player health system. Almost ready to work on game over/respawning. Might try and add the ability to increase max health dynamically.
+
+Time spent today was about 3 and a half hours
+
+8/08 -
+
+Decided to look at the inventory script. Had some major brain fog today and did
+not make any progress. I just know there's a better way to do it than the script
+is currently running. 
+
+My thoughts on trying to tackle this before respawning and game over are to get
+the old build playable first and then work on adding new features. This shouldn't
+take too long to fix, I just want to think of a clever way of doing it that would
+allow saving progress to be easy.
+
+Time spent: 50 minutes
+
+8/09 - 
+
+Redid the inventory system. Basically based on a list of bools now, and updating the HUD is much much simpler. Now I want to move on to a game over and respawn system.
+
+8/10 -
+
+Respawn system implemented. A respawn is exactly like a spawn but takes priority during game overs. 
+
+
+

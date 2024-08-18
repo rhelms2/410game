@@ -17,10 +17,10 @@ public class ColorSwitcherRotation : GLOBAL_color
     public int rotation_speed = 20;      // This is how much the controller will rotate per frame
     public AudioSource color_audio;
     public AudioSource rotate_audio;
+    bool[] inventory_activation;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
+        inventory_activation = Player_Inventory.instance.inventory_activation;
         changed = false;
     }
 
@@ -30,32 +30,32 @@ public class ColorSwitcherRotation : GLOBAL_color
 
         changed = false;
 
-        if (Input.GetKeyDown("e"))
+        if (GameManager.controls.Gameplay.RotateRight.WasPressedThisFrame( ))
         {
             changed = true;
             RotateController(false);
         }
-        else if (Input.GetKeyDown("q"))
+        else if (GameManager.controls.Gameplay.RotateLeft.WasPressedThisFrame( ))
         {
             changed = true;
             RotateController(true);
         }
-        else if (Input.GetMouseButtonDown(1))
-        {     // Right click
+        else if (GameManager.controls.Gameplay.ToggleColor.WasPressedThisFrame())
+        {     
 
             // Change active base color based on which spire the user has selected
 
-            if ((spire == 0) && inventory_activation[0])
+            if ((spire == 0) && inventory_activation[1])
             {
                 base_color_table[0] = !base_color_table[0];
                 changed = true;
             }
-            else if ((spire == 1) && inventory_activation[1])
+            else if ((spire == 1) && inventory_activation[2])
             {
                 base_color_table[1] = !base_color_table[1];
                 changed = true;
             }
-            else if ((spire == 2) && inventory_activation[2])
+            else if ((spire == 2) && inventory_activation[3])
             {
                 base_color_table[2] = !base_color_table[2];
                 changed = true;

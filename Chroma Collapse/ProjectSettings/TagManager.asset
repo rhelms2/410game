@@ -4,25 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - red
-  - Door
   - Gravity Sensitive Object
-  - ColorSwitcher Pickup
-  - Red Chip Pickup
-  - Yellow Chip Pickup
-  - Blue Chip Pickup
-  - ColorSwitcher UI Object
   - Bullet
-  - Gun Pickup
-  - Gun UI Object
   - Red Gun Chip
   - Yellow Gun Chip
   - Blue Gun Chip
-  - Key Card
-  - HealthPickup
   - Display Port
-  - Respawn Point
   - Fade Target
+  - ColorSwitcher UI Object
+  - Spawn
   layers:
   - Default
   - TransparentFX

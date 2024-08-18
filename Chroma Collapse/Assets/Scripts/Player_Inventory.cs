@@ -1,131 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Player_Inventory : GLOBAL_color
+public class Player_Inventory : MonoBehaviour
 {
-    protected static List<string> inventory = new List<string>();
+    public static Player_Inventory instance;
 
-    [SerializeField] private bool testing = false;
-    private string ColorSwitcher_tag = "ColorSwitcher Pickup";
-    private string red_crystal_tag = "Red Chip Pickup";
-    private string yellow_crystal_tag = "Yellow Chip Pickup";
-    private string blue_crystal_tag = "Blue Chip Pickup";
-    private string gun_tag = "Gun Pickup";
-    private string red_gun_chip = "Red Gun Chip";
-    private string yellow_gun_chip = "Yellow Gun Chip";
-    private string blue_gun_chip = "Blue Gun Chip";
-    private string key_card = "Key Card";
+    // The order the items are set in the editor MUST match the corresponding index of the inventory_activation list
+    public GameObject[] inventory_list;
 
-    // This boolean is switched on by item pickups which triggers UpdateUI
-    static protected bool inventory_changed = false;
+    // This list is accessed in other scripts to check what items the player has so as to expand/limit functionality
+    public bool[] inventory_activation;
 
     void Awake() {
-
-        // If testing the game, activate all inventory slots
-        if (testing) {
-            inventory.Add(ColorSwitcher_tag);
-            inventory.Add(red_crystal_tag);
-            inventory.Add(yellow_crystal_tag);
-            inventory.Add(blue_crystal_tag);
-             
-            inventory.Add(gun_tag);
-            inventory.Add(red_gun_chip);
-            inventory.Add(yellow_gun_chip);
-            inventory.Add(blue_gun_chip);
-            inventory.Add(key_card);
-            
-            int i = 0;
-            
-            foreach (bool item in inventory_activation) {
-                inventory_activation[i] = true;
-                i++;
-            }
-            //*/
-
-            for (int j = 0; j < 3; j++) {
-                inventory_activation[j] = true;
-            }
-
-            UpdateUI();
+        if (instance != null) {
+            Destroy(this.gameObject);
+            return;
         }
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
+        instance = this;
+
+        for (int i = 0; i < inventory_list.Length; i++) {
+
+            if (inventory_activation[i]) {
+                ActivateHUDItem(i);
+            }
+        }
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (inventory_changed) {
-            // Debug.Log("INVENTORY CHANGED");
-            UpdateUI();
-            inventory_changed = false;
+    public void ActivateHUDItem(int item_index) {
+        if (item_index >= 0 && item_index < inventory_list.Length) {
+            inventory_list[item_index].SetActive(true);
+            inventory_activation[item_index] = true;
         }
-    }
-
-    protected void UpdateUI() {
-
-        GameObject ColorSwitcher = GameObject.FindWithTag("ColorSwitcher UI Object").transform.GetChild(1).gameObject;
-
-        foreach (string tag in inventory) {
-
-            Debug.Log("UpdateUI: Inventory tag: " + tag);
-            // Debug.Log("ColorSwitcher tag: " + ColorSwitcher_tag);
-
-            if (tag == ColorSwitcher_tag) {
-                // sets the color switcher to active
-                // Debug.Log("Color switcher location: " + ColorSwitcher);
-                ColorSwitcher.SetActive(true);
-            }
-            else if (tag == red_crystal_tag) {
-                
-                // sets red spire active and allows control of red by the player
-
-                ColorSwitcher.transform.GetChild(0).gameObject.GetComponent<Color_swap>().enabled = true;
-                ColorSwitcher.transform.gameObject.GetComponent<ColorSwitcherRotation>().enabled = true;
-                inventory_activation[0] = true;
-                ColorSwitcher.transform.GetChild(1).GetChild(0).gameObject.GetComponent<block_collision_switcher>().enabled = true;
-            }
-            else if (tag == yellow_crystal_tag) {
-
-                // sets yellow spire active and allows control of yellow by the player
-                
-                ColorSwitcher.transform.GetChild(0).gameObject.GetComponent<Color_swap>().enabled = true;
-                ColorSwitcher.transform.gameObject.GetComponent<ColorSwitcherRotation>().enabled = true;
-                inventory_activation[1] = true;
-                ColorSwitcher.transform.GetChild(2).GetChild(0).gameObject.GetComponent<block_collision_switcher>().enabled = true;
-            }
-            else if (tag == blue_crystal_tag) {
-
-                // sets blue spire active and allows control of blue by the player
-
-                ColorSwitcher.transform.GetChild(0).gameObject.GetComponent<Color_swap>().enabled = true;
-                ColorSwitcher.transform.gameObject.GetComponent<ColorSwitcherRotation>().enabled = true;
-                inventory_activation[2] = true;
-                ColorSwitcher.transform.GetChild(3).GetChild(0).gameObject.GetComponent<block_collision_switcher>().enabled = true;
-            }
-            else if (tag == gun_tag) {
-                ColorSwitcher.transform.parent.GetChild(2).gameObject.SetActive(true);  // Gun location
-            }
-            else if (tag == red_gun_chip) {
-                inventory_activation[3] = true;
-            }
-            else if (tag == yellow_gun_chip) {
-                inventory_activation[4] = true;
-            }
-            else if (tag == blue_gun_chip) {
-                inventory_activation[5] = true;
-            }
-            else if (tag == key_card) {
-                inventory_activation[6] = true;
-            }
+        else {
+            Debug.Log("Item index is invalid");
         }
-
     }
 
 }

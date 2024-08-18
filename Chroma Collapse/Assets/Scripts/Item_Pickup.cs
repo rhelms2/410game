@@ -5,31 +5,21 @@ using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
-public class Item_Pickup : Player_Inventory
+public class Item_Pickup : MonoBehaviour
 {
-    [SerializeField] GameObject item;
-
+    [SerializeField] int item_index;
     [SerializeField] AudioSource pickup_noise;
 
     void Awake() {
-        if (gameObject != null) { 
-            foreach (string tag in inventory) {
-                if (tag == gameObject.tag) {
-                    gameObject.SetActive(false);
-                    Destroy(gameObject);
-                }
-            }
-        }
-        else {
-            return;
+        if (Player_Inventory.instance.inventory_activation[item_index]) { 
+            Destroy(this.gameObject);
         }
     }
 
     void OnTriggerEnter(Collider other) {
         if (other.tag == "Player") {
 
-            inventory.Add(item.tag);
-            inventory_changed = true;
+            Player_Inventory.instance.ActivateHUDItem(item_index);
             pickup_noise.Play();
 
             // Debug.Log("Adding item to player inventory. Item: " + inventory.Last());

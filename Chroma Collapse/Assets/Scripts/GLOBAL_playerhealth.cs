@@ -4,7 +4,7 @@ using System.Numerics;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GLOBAL_playerhealth : Player_Inventory
+public class GLOBAL_playerhealth : GLOBAL_color
 {
     public const int MAX_HEALTH = 3;
     public float flash_speed = 15;
