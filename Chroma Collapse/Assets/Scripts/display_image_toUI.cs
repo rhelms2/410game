@@ -55,14 +55,14 @@ public class display_image_to_ui : MonoBehaviour
     void Update()
     {
         if (in_range) {
-            if (!image_active && GameManager.controls.Gameplay.Activate.WasPressedThisFrame()) {
+            if (!image_active && Input.GetKeyDown("f")) {
                 image_active = true;
                 target_display.sprite = image;
                 text_target.text = optional_overlay_text;
                 target_display.color = new Color(1, 1, 1, 1);
                 sound_effect.Play();
             }
-            else if (image_active && GameManager.controls.Gameplay.Activate.WasPressedThisFrame()) {
+            else if (image_active && Input.GetKeyDown("f")) {
                 image_active = false;
                 text_target.text = "";
                 target_display.color = new Color(1, 1, 1, 0);

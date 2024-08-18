@@ -2,20 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class NewBehaviourScript : MonoBehaviour
 {
     /* movement and camera code from 'Dave / GameDevelopment' on Youtube.
      link to video: https://www.youtube.com/watch?v=f473C43s8nE */
-
-    public Transform orientation;
 
     //create variables for camera movement
     public float sensX;
     public float sensY;
 
+    //keep track of player position
+    public Transform orientation;
+
     //set up rotation values to hold the movement data of the mouse
     float rotationX;
     float rotationY;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,29 +30,20 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch (Player_Singleton.player_instance.GetPlayerState()) {
-            case (int) Player_Singleton.state.normal:
-                //get mouse input OLD
-                // float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
-                // float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
+        //get mouse input
+        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 
-                float mouseX = GameManager.controls.Gameplay.CameraRightLeft.ReadValue<float>() * Time.deltaTime * sensX;
-                float mouseY = GameManager.controls.Gameplay.CameraUpDown.ReadValue<float>() * Time.deltaTime * sensY;
+        //apply mous input
+        rotationY += mouseX;
+        rotationX -= mouseY;
 
-                //apply mous input
-                rotationY += mouseX;
-                rotationX -= mouseY;
+        //clamp the x-axis
+        rotationX = Mathf.Clamp(rotationX, -90f, 90f);
 
-                //clamp the x-axis
-                rotationX = Mathf.Clamp(rotationX, -90f, 90f);
+        //rotate plaer and camera
+        transform.rotation = Quaternion.Euler(rotationX, rotationY, 0);
+        orientation.rotation = Quaternion.Euler(0, rotationY, 0);
 
-                //rotate player and camera
-                transform.rotation = Quaternion.Euler(rotationX, rotationY, 0);
-                orientation.rotation = Quaternion.Euler(0, rotationY, 0);
-                break;
-            case (int) Player_Singleton.state.freeze:
-                break;
-        }
     }
-
 }

@@ -10,7 +10,6 @@ public class RayGun : MonoBehaviour
     public GameObject gun;
     public AudioSource shootSound;
     public Camera playerCamera;
-    [SerializeField] GameObject crosshairs;
 
     public GameObject playerObject;
 
@@ -27,16 +26,15 @@ public class RayGun : MonoBehaviour
     private bool recovering = false;
     private float initialRecoil_x;
 
-    void Awake()
+    void Start()
     {
         initialRecoil_x = gun.transform.rotation.eulerAngles.x;
-        crosshairs.SetActive(true);
     }
 
     void Update()
     {
         HandleRecoil();
-        if (GameManager.controls.Gameplay.Shoot.IsPressed())
+        if (Input.GetMouseButton(0))
         {
             if (Time.time > m_shootRateTimeStamp)
             {
