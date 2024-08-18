@@ -34,8 +34,8 @@ public class CameraController : MonoBehaviour
                 // float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
                 // float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 
-                float mouseX = GameManager.controls.Gameplay.CameraRightLeft.ReadValue<float>() * Time.deltaTime * sensX;
-                float mouseY = GameManager.controls.Gameplay.CameraUpDown.ReadValue<float>() * Time.deltaTime * sensY;
+                float mouseX = GameManager.controls.Gameplay.Camera.ReadValue<Vector2>().x * Time.deltaTime * sensX;
+                float mouseY = GameManager.controls.Gameplay.Camera.ReadValue<Vector2>().y * Time.deltaTime * sensY;
 
                 //apply mous input
                 rotationY += mouseX;

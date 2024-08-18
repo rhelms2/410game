@@ -405,39 +405,6 @@
                 },
                 {
                     "name": "1D Axis",
-                    "id": "91bc5fef-c425-431d-8957-0da5f66fcdc1",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Camera Up/Down",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "1ec39e1e-8974-4c7b-92e7-769d83db6aa3",
-                    "path": "<Mouse>/delta/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Camera Up/Down",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "23b0f57b-d3d9-4f1e-9c60-034e8c450c7c",
-                    "path": "<Mouse>/delta/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Camera Up/Down",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "1D Axis",
                     "id": "a0df8452-0038-42d5-9377-7bd6150739b6",
                     "path": "1DAxis",
                     "interactions": "",
@@ -483,7 +450,7 @@
                 {
                     "name": "negative",
                     "id": "77410f35-5f5a-4a80-8d6d-7a9ac54e8b9c",
-                    "path": "<Mouse>/delta/left",
+                    "path": "<Mouse>/position/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -494,7 +461,7 @@
                 {
                     "name": "positive",
                     "id": "408628e4-d4fb-49aa-b309-f5233cea4518",
-                    "path": "<Mouse>/delta/right",
+                    "path": "<Mouse>/position/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -516,9 +483,9 @@
                 {
                     "name": "",
                     "id": "998fc662-032f-4998-bbf5-54356e25a834",
-                    "path": "<Mouse>/position",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "ScaleVector2(x=0.1,y=0.1)",
                     "groups": "",
                     "action": "Camera",
                     "isComposite": false,

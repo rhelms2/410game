@@ -49,7 +49,7 @@ public class LightButton : MonoBehaviour
             text_target.text = overlay_text;
         }
 
-        if (Input.GetKeyDown("f") && !pressed && !lightLogic.active)
+        if (GameManager.controls.Gameplay.Activate.WasPressedThisFrame() && !pressed && !lightLogic.active)
         {
             pressed = true;
             lightLogic.active = true;

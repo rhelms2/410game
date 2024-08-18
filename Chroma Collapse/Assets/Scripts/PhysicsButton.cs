@@ -65,7 +65,7 @@ public class PhysicsButton : MonoBehaviour
             text_target.text = overlay_text;
             displaying = true;
         }
-        if (Input.GetKeyDown("f") && !pressed)
+        if (GameManager.controls.Gameplay.Activate.WasPressedThisFrame() && !pressed)
         {
             makeBall();
             pressed = true;
