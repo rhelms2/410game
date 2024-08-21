@@ -54,8 +54,8 @@ public class Player_Movement : MonoBehaviour
     //get axis for the player object
     private void KeyboardInput()
     {
-        horizontalInput = GameManager.controls.Gameplay.MoveRightLeft.ReadValue<float>();
-        verticalInput = GameManager.controls.Gameplay.MoveForwardBack.ReadValue<float>();
+        horizontalInput = GameManager.controls.Gameplay.Move.ReadValue<Vector2>().x;
+        verticalInput = GameManager.controls.Gameplay.Move.ReadValue<Vector2>().y;
 
         //get raw inputs for movement OLD
         // horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -149,6 +149,10 @@ public class Player_Movement : MonoBehaviour
 
                 SpeedLimiter();
 
+                if (overlaps == 0) {
+                    grounded = false;
+                }
+
                 // apply drag if grounded
                 if (grounded)
                     rb.drag = groundDrag;
@@ -170,7 +174,9 @@ public class Player_Movement : MonoBehaviour
     }
 
     // Temporary experiment to try and fix grounded logic issue
-    int overlaps = 0;
+    // There's a weird case where when scenes transition, a trigger won't exit the player's collider. So I am making this variable
+    // a static int so it can be reset to zero whenever the player's position is set by something other than normal means of movement...
+    public static int overlaps = 0;
 
     void OnTriggerEnter(Collider other) {
         // Debug.Log("Trigger colliding with player object: " + other.gameObject);
@@ -189,7 +195,7 @@ public class Player_Movement : MonoBehaviour
     void OnTriggerExit(Collider other) {
         // Debug.Log("Trigger exit: " + other.gameObject);
         if (other.gameObject.layer == groundTarget) {
-            // Debug.Log("Grounded changed to false");
+            Debug.Log("Trigger exiting player. Overlaps: " + overlaps);
             if (overlaps <= 1) {
                 grounded = false;
             }

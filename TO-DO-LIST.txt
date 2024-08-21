@@ -50,4 +50,12 @@ Add appropriate screen flash and sound effect for health changes?
 
 Make sure changing the player state to freeze also locks the camera - Good
 
+8/19/24
+
+Fix game over screen input glitch. Add functionality to either click the button with the mouse OR select with the up/down buttons and press the activate key to click the button. - DONE
+
+Once this is working consistently, start working on goonbers.
+
+
+
 

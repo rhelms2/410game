@@ -27,7 +27,7 @@ public class GLOBAL_color : MonoBehaviour
     }
 
     // Each entry corresponds to the color enum
-    public UnityEngine.Color[] color_array = {
+    public static UnityEngine.Color[] color_array = {
         Color.grey,
         Color.red,
         Color.yellow,

@@ -13,11 +13,14 @@ TagManager:
   - Fade Target
   - ColorSwitcher UI Object
   - Spawn
+  - red
+  - Respawn Point
+  - HealthPickup
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - ColorSwitcher

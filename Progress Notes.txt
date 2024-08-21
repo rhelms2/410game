@@ -41,5 +41,9 @@ Redid the inventory system. Basically based on a list of bools now, and updating
 
 Respawn system implemented. A respawn is exactly like a spawn but takes priority during game overs. 
 
+8/19 - 
+
+Old build is now totally playable with the new architecture for the player/hud/game systems. Additionally, the game supports controller inputs. 
+
 
 

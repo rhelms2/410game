@@ -11,6 +11,7 @@ public class display_image_to_ui : MonoBehaviour
     public string optional_overlay_text;
     private TextMeshProUGUI text_target;
     private Image target_display;
+    private Sprite old_image;
     public AudioSource sound_effect;
     private bool in_range = false;
     private bool image_active = false;
@@ -18,6 +19,7 @@ public class display_image_to_ui : MonoBehaviour
 
     void Start() {
         target_display = GameObject.FindWithTag("Display Port").transform.GetChild(1).gameObject.GetComponent<Image>();
+        old_image = target_display.sprite;
         text_target = GameObject.FindWithTag("Display Port").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
         if (automatic) {
             target_display.sprite = image;
@@ -65,6 +67,7 @@ public class display_image_to_ui : MonoBehaviour
             else if (image_active && GameManager.controls.Gameplay.Activate.WasPressedThisFrame()) {
                 image_active = false;
                 text_target.text = "";
+                target_display.sprite = old_image;
                 target_display.color = new Color(1, 1, 1, 0);
                 sound_effect.Play();
             }

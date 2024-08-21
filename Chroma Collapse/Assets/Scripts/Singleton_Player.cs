@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +20,7 @@ public class Player_Singleton : MonoBehaviour
     is accessed in the Player_Movement script
     */
 
-    public enum state {normal, freeze};
+    public enum state {normal, freeze, dead};
     private static int player_state;
 
 
@@ -57,14 +58,15 @@ public class Player_Singleton : MonoBehaviour
         return player_state;
     }
 
-    public void SetPlayerPosition(Vector3 new_pos) {
+    public void SetPlayerPosition(UnityEngine.Vector3 new_pos) {
+        Player_Movement.overlaps = 0;
         player_instance.transform.position = new_pos;
     }
-    public void SetPlayerRotation(Quaternion new_rot) {
+    public void SetPlayerRotation(UnityEngine.Quaternion new_rot) {
         // Must set the child, orientation, here
-        player_instance.transform.GetChild(0).rotation = Quaternion.Euler(0, new_rot.y, 0);
+        player_instance.transform.GetChild(0).rotation = UnityEngine.Quaternion.Euler(0, new_rot.y, 0);
     }
-    public Vector3 GetPlayerPosition() {
+    public UnityEngine.Vector3 GetPlayerPosition() {
         return player_instance.transform.position;
     }
 
@@ -93,5 +95,9 @@ public class Player_Singleton : MonoBehaviour
         if (CURR_HEALTH == 0) {
             GameManager.instance.GameOver();
         }
+    }
+
+    public void ApplyForce(UnityEngine.Vector3 direction) {
+        transform.GetComponent<Rigidbody>().AddForce(direction);
     }
 }
