@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5674962322565684015}
   - component: {fileID: 803583935960426651}
   - component: {fileID: 2657410095001467262}
+  - component: {fileID: 2293807054625326658}
   m_Layer: 0
   m_Name: Goonber
   m_TagString: Untagged
@@ -111,6 +112,7 @@ MonoBehaviour:
   sprite: {fileID: 4266323021647298814}
   special_color: 1
   health: 0
+  idle_frames_limit: 480
   groundLayer:
     serializedVersion: 2
     m_Bits: 1024
@@ -118,8 +120,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   agent: {fileID: 0}
-  sightRange: 8
-  patrol_distance: 10
+  sightRange: 6
+  patrol_distance: 8
+  patrol_speed: 1
+  follow_speed: 2.4
 --- !u!114 &5116186655924281234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,3 +229,24 @@ NavMeshAgent:
   m_BaseOffset: 0.64
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 0
+--- !u!95 &2293807054625326658
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115728799498724181}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7f7105a03b6c7c04f95b15666ed183c1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
